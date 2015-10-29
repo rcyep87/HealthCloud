@@ -25,6 +25,7 @@ class PrescriptionsController < ApplicationController
   # POST /prescriptions.json
   def create
     @prescription = Prescription.new(prescription_params)
+    @prescription.user = current_user
 
     respond_to do |format|
       if @prescription.save
