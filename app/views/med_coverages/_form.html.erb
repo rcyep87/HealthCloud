@@ -24,6 +24,10 @@
     <%= f.text_field :network_type %>
   </div>
   <div class="field">
+    <%= f.label :memberid %><br>
+    <%= f.text_field :memberid %>
+  </div>
+  <div class="field">
     <%= f.label :pcp_fee %><br>
     <%= f.number_field :pcp_fee %>
   </div>
@@ -69,13 +73,9 @@
   </div>
   <div class="field">
     <%= f.label :renewal_date %><br>
-    <%= f.date_select :renewal_date %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
+    <%= f.date_field :renewal_date %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit" %>
   </div>
 <% end %>

@@ -25,6 +25,7 @@ class SleepsController < ApplicationController
   # POST /sleeps.json
   def create
     @sleep = Sleep.new(sleep_params)
+    @sleep.user = current_user
 
     respond_to do |format|
       if @sleep.save

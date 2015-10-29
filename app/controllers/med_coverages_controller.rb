@@ -25,6 +25,7 @@ class MedCoveragesController < ApplicationController
   # POST /med_coverages.json
   def create
     @med_coverage = MedCoverage.new(med_coverage_params)
+    @med_coverage.user = current_user
 
     respond_to do |format|
       if @med_coverage.save
@@ -69,6 +70,6 @@ class MedCoveragesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def med_coverage_params
-      params.require(:med_coverage).permit(:carrier, :plan_level, :network_type, :pcp_fee, :specialist_fee, :er_fee, :rx_brand_fee, :rx_generic_fee, :in_net_deduct_ind, :in_net_deduct_fam, :out_net_deduct_ind, :out_net_deduct_fam, :co_ins_percent, :out_of_pocket_max, :renewal_date, :user_id)
+      params.require(:med_coverage).permit(:carrier, :plan_level, :network_type, :memberid, :pcp_fee, :specialist_fee, :er_fee, :rx_brand_fee, :rx_generic_fee, :in_net_deduct_ind, :in_net_deduct_fam, :out_net_deduct_ind, :out_net_deduct_fam, :co_ins_percent, :out_of_pocket_max, :renewal_date, :user_id)
     end
 end
