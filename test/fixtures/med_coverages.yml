@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  carrier: MyString
+  plan_level: MyString
+  network_type: MyString
+  pcp_fee: 1
+  specialist_fee: 1
+  er_fee: 1
+  rx_brand_fee: 1
+  rx_generic_fee: 1
+  in_net_deduct_ind: 1
+  in_net_deduct_fam: 1
+  out_net_deduct_ind: 1
+  out_net_deduct_fam: 1
+  co_ins_percent: 1
+  out_of_pocket_max: 1
+  renewal_date: 2015-10-28
+  user_id: 
+
+two:
+  carrier: MyString
+  plan_level: MyString
+  network_type: MyString
+  pcp_fee: 1
+  specialist_fee: 1
+  er_fee: 1
+  rx_brand_fee: 1
+  rx_generic_fee: 1
+  in_net_deduct_ind: 1
+  in_net_deduct_fam: 1
+  out_net_deduct_ind: 1
+  out_net_deduct_fam: 1
+  co_ins_percent: 1
+  out_of_pocket_max: 1
+  renewal_date: 2015-10-28
+  user_id: 

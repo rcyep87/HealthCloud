@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  physician_first: MyString
+  physician_last: MyString
+  dos: 2015-10-28
+  reason_for_visit: MyString
+  diagnosis: MyString
+  dr_notes: MyString
+  user_id: 
+
+two:
+  physician_first: MyString
+  physician_last: MyString
+  dos: 2015-10-28
+  reason_for_visit: MyString
+  diagnosis: MyString
+  dr_notes: MyString
+  user_id: 

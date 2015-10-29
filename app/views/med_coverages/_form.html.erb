@@ -1,0 +1,81 @@
+<%= form_for(@med_coverage) do |f| %>
+  <% if @med_coverage.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@med_coverage.errors.count, "error") %> prohibited this med_coverage from being saved:</h2>
+
+      <ul>
+      <% @med_coverage.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :carrier %><br>
+    <%= f.text_field :carrier %>
+  </div>
+  <div class="field">
+    <%= f.label :plan_level %><br>
+    <%= f.text_field :plan_level %>
+  </div>
+  <div class="field">
+    <%= f.label :network_type %><br>
+    <%= f.text_field :network_type %>
+  </div>
+  <div class="field">
+    <%= f.label :pcp_fee %><br>
+    <%= f.number_field :pcp_fee %>
+  </div>
+  <div class="field">
+    <%= f.label :specialist_fee %><br>
+    <%= f.number_field :specialist_fee %>
+  </div>
+  <div class="field">
+    <%= f.label :er_fee %><br>
+    <%= f.number_field :er_fee %>
+  </div>
+  <div class="field">
+    <%= f.label :rx_brand_fee %><br>
+    <%= f.number_field :rx_brand_fee %>
+  </div>
+  <div class="field">
+    <%= f.label :rx_generic_fee %><br>
+    <%= f.number_field :rx_generic_fee %>
+  </div>
+  <div class="field">
+    <%= f.label :in_net_deduct_ind %><br>
+    <%= f.number_field :in_net_deduct_ind %>
+  </div>
+  <div class="field">
+    <%= f.label :in_net_deduct_fam %><br>
+    <%= f.number_field :in_net_deduct_fam %>
+  </div>
+  <div class="field">
+    <%= f.label :out_net_deduct_ind %><br>
+    <%= f.number_field :out_net_deduct_ind %>
+  </div>
+  <div class="field">
+    <%= f.label :out_net_deduct_fam %><br>
+    <%= f.number_field :out_net_deduct_fam %>
+  </div>
+  <div class="field">
+    <%= f.label :co_ins_percent %><br>
+    <%= f.number_field :co_ins_percent %>
+  </div>
+  <div class="field">
+    <%= f.label :out_of_pocket_max %><br>
+    <%= f.number_field :out_of_pocket_max %>
+  </div>
+  <div class="field">
+    <%= f.label :renewal_date %><br>
+    <%= f.date_select :renewal_date %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

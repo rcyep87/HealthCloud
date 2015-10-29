@@ -1,0 +1,84 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Carrier:</strong>
+  <%= @med_coverage.carrier %>
+</p>
+
+<p>
+  <strong>Plan level:</strong>
+  <%= @med_coverage.plan_level %>
+</p>
+
+<p>
+  <strong>Network type:</strong>
+  <%= @med_coverage.network_type %>
+</p>
+
+<p>
+  <strong>Pcp fee:</strong>
+  <%= @med_coverage.pcp_fee %>
+</p>
+
+<p>
+  <strong>Specialist fee:</strong>
+  <%= @med_coverage.specialist_fee %>
+</p>
+
+<p>
+  <strong>Er fee:</strong>
+  <%= @med_coverage.er_fee %>
+</p>
+
+<p>
+  <strong>Rx brand fee:</strong>
+  <%= @med_coverage.rx_brand_fee %>
+</p>
+
+<p>
+  <strong>Rx generic fee:</strong>
+  <%= @med_coverage.rx_generic_fee %>
+</p>
+
+<p>
+  <strong>In net deduct ind:</strong>
+  <%= @med_coverage.in_net_deduct_ind %>
+</p>
+
+<p>
+  <strong>In net deduct fam:</strong>
+  <%= @med_coverage.in_net_deduct_fam %>
+</p>
+
+<p>
+  <strong>Out net deduct ind:</strong>
+  <%= @med_coverage.out_net_deduct_ind %>
+</p>
+
+<p>
+  <strong>Out net deduct fam:</strong>
+  <%= @med_coverage.out_net_deduct_fam %>
+</p>
+
+<p>
+  <strong>Co ins percent:</strong>
+  <%= @med_coverage.co_ins_percent %>
+</p>
+
+<p>
+  <strong>Out of pocket max:</strong>
+  <%= @med_coverage.out_of_pocket_max %>
+</p>
+
+<p>
+  <strong>Renewal date:</strong>
+  <%= @med_coverage.renewal_date %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @med_coverage.user %>
+</p>
+
+<%= link_to 'Edit', edit_med_coverage_path(@med_coverage) %> |
+<%= link_to 'Back', med_coverages_path %>

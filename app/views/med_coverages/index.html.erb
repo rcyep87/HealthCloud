@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Med Coverages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Carrier</th>
+      <th>Plan level</th>
+      <th>Network type</th>
+      <th>Pcp fee</th>
+      <th>Specialist fee</th>
+      <th>Er fee</th>
+      <th>Rx brand fee</th>
+      <th>Rx generic fee</th>
+      <th>In net deduct ind</th>
+      <th>In net deduct fam</th>
+      <th>Out net deduct ind</th>
+      <th>Out net deduct fam</th>
+      <th>Co ins percent</th>
+      <th>Out of pocket max</th>
+      <th>Renewal date</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @med_coverages.each do |med_coverage| %>
+      <tr>
+        <td><%= med_coverage.carrier %></td>
+        <td><%= med_coverage.plan_level %></td>
+        <td><%= med_coverage.network_type %></td>
+        <td><%= med_coverage.pcp_fee %></td>
+        <td><%= med_coverage.specialist_fee %></td>
+        <td><%= med_coverage.er_fee %></td>
+        <td><%= med_coverage.rx_brand_fee %></td>
+        <td><%= med_coverage.rx_generic_fee %></td>
+        <td><%= med_coverage.in_net_deduct_ind %></td>
+        <td><%= med_coverage.in_net_deduct_fam %></td>
+        <td><%= med_coverage.out_net_deduct_ind %></td>
+        <td><%= med_coverage.out_net_deduct_fam %></td>
+        <td><%= med_coverage.co_ins_percent %></td>
+        <td><%= med_coverage.out_of_pocket_max %></td>
+        <td><%= med_coverage.renewal_date %></td>
+        <td><%= med_coverage.user %></td>
+        <td><%= link_to 'Show', med_coverage %></td>
+        <td><%= link_to 'Edit', edit_med_coverage_path(med_coverage) %></td>
+        <td><%= link_to 'Destroy', med_coverage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Med coverage', new_med_coverage_path %>

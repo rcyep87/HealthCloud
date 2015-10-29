@@ -1,0 +1,2 @@
+module MedCoveragesHelper
+end

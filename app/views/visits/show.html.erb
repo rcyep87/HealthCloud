@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Physician first:</strong>
+  <%= @visit.physician_first %>
+</p>
+
+<p>
+  <strong>Physician last:</strong>
+  <%= @visit.physician_last %>
+</p>
+
+<p>
+  <strong>Dos:</strong>
+  <%= @visit.dos %>
+</p>
+
+<p>
+  <strong>Reason for visit:</strong>
+  <%= @visit.reason_for_visit %>
+</p>
+
+<p>
+  <strong>Diagnosis:</strong>
+  <%= @visit.diagnosis %>
+</p>
+
+<p>
+  <strong>Dr notes:</strong>
+  <%= @visit.dr_notes %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @visit.user %>
+</p>
+
+<%= link_to 'Edit', edit_visit_path(@visit) %> |
+<%= link_to 'Back', visits_path %>
