@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :visits
   devise_for :users
 
+  get  "/dashboard" => "userdashboard#show"
+
   root to: "home#index"
 
 end
