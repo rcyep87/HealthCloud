@@ -20,8 +20,8 @@
     <%= f.text_field :physician_last %>
   </div>
   <div class="field">
-    <%= f.label :dos %><br>
-    <%= f.date_select :dos %>
+    <%= f.label :Date_of_service %><br>
+    <%= f.date_field :dos %>
   </div>
   <div class="field">
     <%= f.label :reason_for_visit %><br>
@@ -34,10 +34,6 @@
   <div class="field">
     <%= f.label :dr_notes %><br>
     <%= f.text_field :dr_notes %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
   </div>
   <div class="actions">
     <%= f.submit %>
