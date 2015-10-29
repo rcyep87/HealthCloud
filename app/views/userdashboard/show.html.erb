@@ -2,8 +2,13 @@
   <div class="row">
     <div class="col m3 offset-m2 s3">
       <p>
-        <%= link_to image_tag("id_card.jpeg"), med_coverage_path(current_user.med_coverage), class: "circle responsive-img" %>
-        <strong>Benefit Information</strong>
+        <% if current_user.med_coverage.blank? %>
+          <%= link_to image_tag("id_card.jpeg"), new_med_coverage_path %>
+          <strong>Submit Your Plan Information</strong>
+        <% else %>
+          <%= link_to image_tag("id_card.jpeg"), med_coverage_path(current_user.med_coverage), class: "circle responsive-img" %>
+          <strong>Benefit Information</strong>
+        <% end %>
       </p>
     </div>
     <div class="col m3 s3">
