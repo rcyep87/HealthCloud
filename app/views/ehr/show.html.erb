@@ -1,15 +1,40 @@
 <p id="notice"><%= notice %></p>
 
-<div class="row">
-  <h2>Electronic Health Record</h2>
+<center><h2>Electronic Health Record</h2></center>
 
+<div class="row">
   <p>
-    <strong>Doctor Visits</strong><br />
-    <strong>Physician's Name</strong>
+    <h4>Doctor Visits</h4>
     <% current_user.visits.each do |v| %>
+    <tr>
+      <p>
+        <strong>Date of Service: </strong>
+        <%= v.dos %>
+      </p>
+    </tr>
+    <strong>Physician's Name: </strong>
     <tr>
       <%= v.physician_first %>
       <%= v.physician_last %>
+    </tr>
+    <tr>
+      <p>
+        <strong>Reason for Visit: </strong>
+        <%= v.reason_for_visit %>
+      </p>
+    </tr>
+    <tr>
+      <p>
+        <strong>Diagnosis: </strong>
+        <%= v.diagnosis %>
+      </p>
+    </tr>
+    <tr>
+      <p>
+        <strong>Phyisican Notes: </strong>
+        <%= v.dr_notes %>
+      </p>
+    </tr>
       <% end %>
     </tr>
   </p>
