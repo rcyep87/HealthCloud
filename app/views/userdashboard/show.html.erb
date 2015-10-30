@@ -1,6 +1,5 @@
-<div class="row">
-  <div class="row">
-    <div class="col m3 offset-m2 s3">
+  <div class="row dashboard">
+    <div class="col m3 offset-m2 s3 dashcol">
       <p>
         <% if current_user.med_coverage.blank? %>
           <%= link_to image_tag("id_card.jpeg"), new_med_coverage_path %>
@@ -11,17 +10,21 @@
         <% end %>
       </p>
     </div>
-    <div class="col m3 s3">
+    <div class="col m3 s3 dashcol">
       <p>
-        <%= link_to image_tag("EHR.jpeg"), visit_path(current_user) %>
-        <strong>Electronic Health Record</strong>
+        <% if current_user.visits.blank? %>
+          <%= link_to image_tag("EHR.jpeg"), ehr_path %>
+          <strong>Electronic Health Record</strong>
+        <% else %>
+          <%= link_to image_tag("EHR.jpeg"), ehr_path %>
+          <strong>Electronic Health Record</strong>
+        <% end %>
       </p>
     </div>
-    <div class="col m3 s3">
+    <div class="col m3 s3 dashcol">
       <p>
         <%= link_to image_tag("graph.jpeg"), root_path %>
         <strong>Health Data</strong>
       </p>
     </div>
   </div>
-</div
