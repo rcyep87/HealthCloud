@@ -10,7 +10,7 @@ class MedCoveragesController < ApplicationController
   # GET /med_coverages/1
   # GET /med_coverages/1.json
   def show
-    @c_med_coverage
+    
   end
 
   # GET /med_coverages/new

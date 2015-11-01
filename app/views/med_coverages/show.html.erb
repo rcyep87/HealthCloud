@@ -5,6 +5,9 @@
   <p>
     <strong>Carrier Name:</strong>
     <%= @med_coverage.carrier %>
+    <% @med_coverage.versions.each do |v| %>
+      <%= v.whodunnit %>
+    <% end %>
   </p>
   <p>
     <strong>Plan Level:</strong>
