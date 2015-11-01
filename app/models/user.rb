@@ -11,4 +11,6 @@ class User < ActiveRecord::Base
   has_many :sleeps
   has_many :exercises
 
+  has_paper_trail
+
 end

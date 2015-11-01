@@ -50,6 +50,8 @@ gem 'devise'
 gem 'react-rails'
 gem 'figaro'
 gem 'mandrill_dm'
+gem 'paper_trail', '~> 4.0.0'
+
 group :production do
   gem 'pg'
   gem 'puma'
