@@ -6,7 +6,7 @@
     <strong>Carrier Name:</strong>
     <%= @med_coverage.carrier %>
     <% @med_coverage.versions.each do |v| %>
-      <%= v.whodunnit %>
+      <%= v.previous %>
     <% end %>
   </p>
   <p>
