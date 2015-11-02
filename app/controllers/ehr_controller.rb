@@ -2,16 +2,9 @@ class EhrController < ApplicationController
   def show
     @visit = Visit.new
     @visit.user = current_user
-    #
-    # respond_to do |format|
-    #   if @visit.save
-    #     format.html { redirect_to ehr_path, notice: 'Visit was successfully submitted.' }
-    #   else
-    #     format.html { render :new }
-    #   end
-    # end
-    #
-    # render template: "visits/_form.html.erb"
+
+    @prescription = Prescription.new
+    @prescription.user = current_user
   end
 
   private

@@ -1,106 +1,116 @@
 <p id="notice"><%= notice %></p>
 
-<%= render "visits/form" %>
+
 
 <center><h2>Electronic Health Record</h2></center>
 
     <div class="row ehr">
       <div class="col m4 s4">
+        <% if current_user.visits.blank? %>
+        <% else %>
         <h4>Doctor Visits</h4>
-          <% if current_user.visits.blank? %>
-          <% else %>
-          <p>
-            <% current_user.visits.each do |v| %>
-            <tr>
-              <p>
-                <strong>Date of Service: </strong>
-                  <%= v.dos %>
-              </p>
-            </tr>
-              <strong>Physician's Name: </strong>
-                <tr>
-                  <%= v.physician_first %>
-                  <%= v.physician_last %>
-                </tr>
-            <tr>
-              <p>
-                <strong>Reason for Visit: </strong>
-                  <%= v.reason_for_visit %>
-              </p>
-            </tr>
-            <tr>
-              <p>
-                <strong>Diagnosis: </strong>
-                  <%= v.diagnosis %>
-              </p>
-            </tr>
-            <tr>
-              <p>
-                <strong>Phyisican Notes: </strong>
-                  <%= v.dr_notes %>
-              </p>
-            </tr>
-              <% end %>
+        <p>
+          <% current_user.visits.each do |v| %>
+          <tr>
+            <p>
+              <strong>Date of Service: </strong>
+                <%= v.dos %>
+            </p>
           </tr>
-        </p>
-      </div>
-        <div class="col m4 s4">
-          <h4>Prescription History</h4>
-          <% if current_user.prescriptions.blank? %>
-          <% else %>
-            <% current_user.prescriptions.each do |p| %>
+            <strong>Physician's Name: </strong>
               <tr>
-                <p>
-                  <strong>Name of Drug: </strong>
-                  <%= p.name %>
-                </p>
+                <%= v.physician_first %>
+                <%= v.physician_last %>
               </tr>
-              <tr>
-                <p>
-                  <strong>Date Prescribed: </strong>
-                  <%= p.date_prescribed %>
-                </p>
-              </tr>
-              <tr>
-                <p>
-                  <strong>Dosage: </strong>
-                  <%= "#{p.dosage}mg" %>
-                </p>
-              </tr>
-              <tr>
-                <p>
-                  <strong>Frequency: </strong>
-                  <%= p.frequency %>
-                </p>
-              </tr>
-              <tr>
-                <p>
-                  <strong>Brand?: </strong>
-                  <%= p.brand %>
-                </p>
-              </tr>
-              <tr>
-                <p>
-                  <strong>Refill Till: </strong>
-                  <%= p.refill_till %>
-                </p>
-              </tr>
-              <tr>
-                <p>
-                  <strong>Notes from Pharmacist: </strong>
-                  <%= p.rx_notes %>
-                </p>
-              </tr>
-            </div>
+          <tr>
+            <p>
+              <strong>Reason for Visit: </strong>
+                <%= v.reason_for_visit %>
+            </p>
+          </tr>
+          <tr>
+            <p>
+              <strong>Diagnosis: </strong>
+                <%= v.diagnosis %>
+            </p>
+          </tr>
+          <tr>
+            <p>
+              <strong>Phyisican Notes: </strong>
+                <%= v.dr_notes %>
+            </p>
+          </tr>
             <% end %>
+        </tr>
+      </p>
+    </div>
+      <div class="col m4 s4">
+        <h4>Prescription History</h4>
+        <% if current_user.prescriptions.blank? %>
+        <% else %>
+          <% current_user.prescriptions.each do |p| %>
+            <tr>
+              <p>
+                <strong>Name of Drug: </strong>
+                <%= p.name %>
+              </p>
+            </tr>
+            <tr>
+              <p>
+                <strong>Date Prescribed: </strong>
+                <%= p.date_prescribed %>
+              </p>
+            </tr>
+            <tr>
+              <p>
+                <strong>Dosage: </strong>
+                <%= "#{p.dosage}mg" %>
+              </p>
+            </tr>
+            <tr>
+              <p>
+                <strong>Frequency: </strong>
+                <%= p.frequency %>
+              </p>
+            </tr>
+            <tr>
+              <p>
+                <strong>Brand?: </strong>
+                <%= p.brand %>
+              </p>
+            </tr>
+            <tr>
+              <p>
+                <strong>Refill Till: </strong>
+                <%= p.refill_till %>
+              </p>
+            </tr>
+            <tr>
+              <p>
+                <strong>Notes from Pharmacist: </strong>
+                <%= p.rx_notes %>
+              </p>
+            </tr>
+          </div>
           <% end %>
-          <% end %>
-        <div class="col m3 offset-m1 s2">
+        <% end %>
+        <% end %>
+        <div class="col m6 offset-m4 s2">
+          <h4>Add New Visit</h4>
           <p>
-            <button class="btn waves-effect blue accent-2"><%= link_to "Submit Recent Doctor Visit", new_visit_path %></button>
-          </p>
-          <p>
-            <button><%= link_to "Submit Recent Rx",           new_prescription_path %></button>
+            <%= render "visits/form" %>
           </p>
         </div>
+          <h4>Add New Rx</h4>
+          <p>
+            <%= render "prescriptions/form" %>
+          </p>
+      <!-- <div class="col m3 offset-m1 s2">
+        <p>
+          <button class="btn waves-effect blue accent-2"><%= link_to "Submit Recent Doctor Visit", new_visit_path %></button>
+        </p>
+        <p>
+          <button><%= link_to "Submit Recent Rx",           new_prescription_path %></button>
+        </p>
+      </div> -->
     </div>
