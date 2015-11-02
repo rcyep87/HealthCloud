@@ -98,7 +98,7 @@
 
   <p>
     <strong>Renewal Date:</strong>
-    <%= @med_coverage.renewal_date %><small> (Prev: <%= " $#{@med_coverage.previous_version.renewal_date}" %>)</small>
+    <%= @med_coverage.renewal_date %><small> (Prev: <%= "#{@med_coverage.previous_version.renewal_date}" %>)</small>
   </p>
 
   <%= link_to 'Edit', edit_med_coverage_path(@med_coverage) %> |
