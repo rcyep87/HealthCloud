@@ -5,13 +5,17 @@
   <p>
     <strong>Carrier Name:</strong>
     <%= @med_coverage.carrier %>
+    <p>History</p>
     <% @med_coverage.versions.each do |v| %>
-      <%= v.previous %>
+      <% med_version = v.reify(dup: true) %>
+      <% if med_version %>
+        <p><%= med_version.carrier %></p>
+      <% end %>
     <% end %>
   </p>
   <p>
     <strong>Plan Level:</strong>
-    <%= @med_coverage.plan_level %>
+    <%= @med_coverage.plan_level %><small>(Prev: <%= @med_coverage.previous_version.plan_level %>)</small>
   </p>
 
   <p>
