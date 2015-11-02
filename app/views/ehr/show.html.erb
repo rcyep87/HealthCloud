@@ -1,6 +1,30 @@
 <p id="notice"><%= notice %></p>
 
 
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Add New Doctor Visit</a>
+
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>Add New Doctor Visit</h4>
+        <p><%= render "visits/form" %></p>
+      </div>
+      <!-- <div class="modal-footer">
+        <a href="/ehr" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      </div> -->
+    </div>
+
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Add New Rx</a>
+
+    <div id="modal2" class="modal">
+      <div class="modal-content">
+        <h4>New Rx</h4>
+        <p><%= render "prescriptions/form" %></p>
+      </div>
+      <!-- <div class="modal-footer">
+        <a href="/ehr" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      </div> -->
+    </div>
+
 
 <center><h2>Electronic Health Record</h2></center>
 
@@ -51,7 +75,7 @@
           <% current_user.current_prescriptions.each do |p| %>
             <div class="card light-blue darken-1">
               <div class="card-content white-text">
-                <span class="card-title"><%= p.name %></span>
+                <span class="card-title"><center><%= p.name %></center></span>
                 <p>
                   <strong>Date Prescribed: </strong>
                   <%= p.date_prescribed %>

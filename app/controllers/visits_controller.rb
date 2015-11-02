@@ -29,7 +29,7 @@ class VisitsController < ApplicationController
 
     respond_to do |format|
       if @visit.save
-        format.html { redirect_to @visit, notice: 'Visit was successfully created.' }
+        format.html { redirect_to ehr_path, notice: 'Visit was successfully created.' }
         format.json { render :show, status: :created, location: @visit }
       else
         format.html { render :new }

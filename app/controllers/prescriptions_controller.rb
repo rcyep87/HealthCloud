@@ -29,7 +29,7 @@ class PrescriptionsController < ApplicationController
 
     respond_to do |format|
       if @prescription.save
-        format.html { redirect_to @prescription, notice: 'Prescription was successfully created.' }
+        format.html { redirect_to ehr_path, notice: 'Prescription was successfully created.' }
         format.json { render :show, status: :created, location: @prescription }
       else
         format.html { render :new }
