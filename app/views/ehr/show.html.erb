@@ -6,10 +6,10 @@
 
     <div class="row ehr">
       <div class="col m4 s4">
-        <% if current_user.visits.blank? %>
-        <% else %>
+        <h4>Doctor Visits</h4>
+          <% if current_user.visits.blank? %>
+          <% else %>
           <p>
-            <h4>Doctor Visits</h4>
             <% current_user.visits.each do |v| %>
             <tr>
               <p>
@@ -45,10 +45,10 @@
         </p>
       </div>
         <div class="col m4 s4">
+          <h4>Prescription History</h4>
           <% if current_user.prescriptions.blank? %>
           <% else %>
             <% current_user.prescriptions.each do |p| %>
-              <h4>Prescription History</h4>
               <tr>
                 <p>
                   <strong>Name of Drug: </strong>
