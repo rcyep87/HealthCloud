@@ -72,10 +72,17 @@
                   <strong>Refill Till: </strong>
                   <%= p.refill_till %>
                 </p>
-                <p>
-                  <strong>Notes from Pharmacist: </strong>
-                  <%= p.rx_notes %>
-                </p>
+                <% if p.rx_notes.blank? %>
+                  <p>
+                    <strong>Notes from Pharmacist: </strong>
+                    <%= "No notes provided." %>
+                  </p>
+                <% else %>
+                  <p>
+                    <strong>Notes from Pharmacist: </strong>
+                    <%= p.rx_notes %>
+                  </p>
+                <% end %>
               </div>
               <div class="card-action">
                 <%= link_to "Edit", edit_prescription_path(p) %>
