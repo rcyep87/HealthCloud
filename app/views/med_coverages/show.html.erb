@@ -15,34 +15,34 @@
   </p>
   <p>
     <strong>Plan Level:</strong>
-    <%= @med_coverage.plan_level %><small>(Prev: <%= @med_coverage.previous_version.plan_level %>)</small>
+    <%= @med_coverage.plan_level %><small> (Prev: <%= @med_coverage.previous_version.plan_level %>)</small>
   </p>
 
   <p>
     <strong>Network Type:</strong>
-    <%= @med_coverage.network_type %>
+    <%= @med_coverage.network_type %><small> (Prev: <%= @med_coverage.previous_version.network_type %>)</small>
   </p>
 
   <p>
     <strong>PCP Fee:</strong>
-    <%= " $#{@med_coverage.pcp_fee}" %>
+    <%= " $#{@med_coverage.pcp_fee}" %><small> (Prev: <%= " $#{@med_coverage.previous_version.pcp_fee}" %>)</small>
   </p>
 
   <p>
     <strong>Specialist Fee:</strong>
-    <%= " $#{@med_coverage.specialist_fee}" %>
+    <%= " $#{@med_coverage.specialist_fee}" %><small> (Prev: <%= " $#{@med_coverage.previous_version.specialist_fee}" %>)</small>
   </p>
 
   <p>
     <strong>ER Fee:</strong>
-    <%= " $#{@med_coverage.er_fee}" %>
+    <%= " $#{@med_coverage.er_fee}" %><small> (Prev: <%= " $#{@med_coverage.previous_version.er_fee}" %>)</small>
   </p>
 
   <p>
     <% if @med_coverage.rx_brand_fee.blank? %>
     <% else %>
       <strong>Rx Brand Fee:</strong>
-      <%= " $#{@med_coverage.rx_brand_fee}" %>
+      <%= " $#{@med_coverage.rx_brand_fee}" %><small> (Prev: <%= " $#{@med_coverage.previous_version.rx_brand_fee}" %>)</small>
     <% end %>
   </p>
 
@@ -50,7 +50,7 @@
     <% if @med_coverage.rx_generic_fee.blank? %>
     <% else %>
       <strong>Rx Generic Fee:</strong>
-      <%= " $#{@med_coverage.rx_generic_fee}" %>
+      <%= " $#{@med_coverage.rx_generic_fee}" %><small> (Prev: <%= " $#{@med_coverage.previous_version.rx_generic_fee}" %>)</small>
     <% end %>
   </p>
 
@@ -58,7 +58,7 @@
     <% if @med_coverage.in_net_deduct_ind.blank? %>
     <% else %>
       <strong>In-Network Deductible - Individual:</strong>
-      <%= " $#{@med_coverage.in_net_deduct_ind}" %>
+      <%= " $#{@med_coverage.in_net_deduct_ind}" %><small> (Prev: <%= " $#{@med_coverage.previous_version.in_net_deduct_ind}" %>)</small>
     <% end %>
   </p>
 
@@ -66,7 +66,7 @@
     <% if @med_coverage.in_net_deduct_fam.blank? %>
     <% else %>
       <strong>In-Network Deductible - Family:</strong>
-      <%= " $#{@med_coverage.in_net_deduct_fam}" %>
+      <%= " $#{@med_coverage.in_net_deduct_fam}" %><small> (Prev: <%= " $#{@med_coverage.previous_version.in_net_deduct_fam}" %>)</small>
     <% end %>
   </p>
 
@@ -74,7 +74,7 @@
     <% if @med_coverage.out_net_deduct_ind.blank? %>
     <% else %>
       <strong>Out-of-Network Deductible - Individual:</strong>
-      <%= " $#{@med_coverage.out_net_deduct_ind}" %>
+      <%= " $#{@med_coverage.out_net_deduct_ind}" %><small> (Prev: <%= " $#{@med_coverage.previous_version.out_net_deduct_ind}" %>)</small>
     <% end %>
   </p>
 
@@ -82,23 +82,23 @@
     <% if @med_coverage.out_net_deduct_fam.blank? %>
     <% else %>
       <strong>Out-of-Network Deductible - Family:</strong>
-      <%= " $#{@med_coverage.out_net_deduct_fam}" %>
+      <%= " $#{@med_coverage.out_net_deduct_fam}" %><small> (Prev: <%= " $#{@med_coverage.previous_version.out_net_deduct_fam}" %>)</small>
     <% end %>
   </p>
 
   <p>
     <strong>Co-insurance Percent:</strong>
-    <%= "#{@med_coverage.co_ins_percent}" %>
+    <%= "#{@med_coverage.co_ins_percent}" %><small> (Prev: <%= " $#{@med_coverage.previous_version.co_ins_percent}" %>)</small>
   </p>
 
   <p>
     <strong>Annual Out of Pocket Max:</strong>
-    <%= " $#{@med_coverage.out_of_pocket_max}" %>
+    <%= " $#{@med_coverage.out_of_pocket_max}" %><small> (Prev: <%= " $#{@med_coverage.previous_version.out_of_pocket_max}" %>)</small>
   </p>
 
   <p>
     <strong>Renewal Date:</strong>
-    <%= @med_coverage.renewal_date %>
+    <%= @med_coverage.renewal_date %><small> (Prev: <%= " $#{@med_coverage.previous_version.renewal_date}" %>)</small>
   </p>
 
   <%= link_to 'Edit', edit_med_coverage_path(@med_coverage) %> |
