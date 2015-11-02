@@ -13,4 +13,7 @@ class User < ActiveRecord::Base
 
   has_paper_trail
 
+  def current_prescriptions
+    prescriptions.where("refill_till >= '#{Time.now}'")
+  end
 end
