@@ -4,7 +4,7 @@ class VisitsController < ApplicationController
   # GET /visits
   # GET /visits.json
   def index
-    @visits = Visit.all
+    @user_visits = current_user.visits
   end
 
   # GET /visits/1

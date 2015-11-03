@@ -25,18 +25,32 @@
 </div>
 
     <div class="row ehr">
-      <div class="col m6 offset-m1 s6">
+
+      <div class="col m4 offset-m1 s12">
+        <h4>Most Recent Dr Visit</h4>
         <% if current_user.visits.blank? %>
-          <h4> You have no visits yet </h4>
+          <h4> You have not submitted any doctor visits yet </h4>
         <% else %>
-          <h4>Most Recent Dr Visit</h4>
-          <%= render "mostrecentvisit" %>
+          <% current_user.most_recent_dr_visit.each do |x| %>
+            <div class="card blue lighten-2">
+              <div class="card-content white-text">
+                <span class="card-title"><center><%= "Issue: #{x.reason_for_visit}" %></center></span>
+                <%= render "mostrecentvisit" %>
+              </div>
+              <div class="card-action">
+                <%= link_to "Edit", edit_prescription_path(x) %>
+                <%= link_to "Show all", prescriptions_path %>
+              </div>
+            </div>
+          <% end %>
         <% end %>
-        </p>
       </div>
-      <div class="col m5 s6">
-        <h4><center>Most Recent Rx</center></h4>
+
+
+      <div class="col m4 offset-m2 s6">
+        <h4>Most Recent Rx</h4>
         <% if current_user.prescriptions.blank? %>
+          <h4> You have submitted any prescriptions yet </h4>
         <% else %>
           <% current_user.most_recent_rx.each do |x| %>
             <div class="card blue lighten-2">
@@ -51,4 +65,5 @@
             </div>
           <% end %>
         <% end %>
+      </div>
     </div>
