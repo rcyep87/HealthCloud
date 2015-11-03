@@ -1,1 +1,2 @@
- $('#modal3').openModal();
+// $('#tos-modal').openModal();
+// $('.modal1').closeModal();

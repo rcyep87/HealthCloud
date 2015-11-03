@@ -18,8 +18,5 @@
 
 $(document).ready(function(){
   $('.parallax').parallax();
+  $('.modal-trigger').leanModal();
 });
-
-$(document).ready(function(){
-   $('.modal-trigger').leanModal();
- });
