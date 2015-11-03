@@ -27,43 +27,13 @@
     <div class="row ehr">
       <div class="col m6 offset-m1 s6">
         <% if current_user.visits.blank? %>
+          <h4> You have no visits yet </h4>
         <% else %>
-        <h4>Doctor Visits</h4>
-        <p>
-          <% current_user.visits.each do |v| %>
-          <tr>
-            <p>
-              <strong>Date of Service: </strong>
-                <%= v.dos %>
-            </p>
-          </tr>
-            <strong>Physician's Name: </strong>
-              <tr>
-                <%= v.physician_first %>
-                <%= v.physician_last %>
-              </tr>
-          <tr>
-            <p>
-              <strong>Reason for Visit: </strong>
-                <%= v.reason_for_visit %>
-            </p>
-          </tr>
-          <tr>
-            <p>
-              <strong>Diagnosis: </strong>
-                <%= v.diagnosis %>
-            </p>
-          </tr>
-          <tr>
-            <p>
-              <strong>Phyisican Notes: </strong>
-                <%= v.dr_notes %>
-            </p>
-          </tr>
-            <% end %>
-        </tr>
-      </p>
-    </div>
+          <h4>Doctor Visits</h4>
+          <%= render "mostrecentvisit" %>
+        <% end %>
+        </p>
+      </div>
       <div class="col m5 s6">
         <h4><center>Prescription History</center></h4>
         <% if current_user.prescriptions.blank? %>
@@ -110,5 +80,4 @@
             </div>
           <% end %>
         <% end %>
-        <% end %>
-      </div>
+    </div>

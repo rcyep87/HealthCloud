@@ -1,0 +1,27 @@
+<% current_user.most_recent_dr_visit.each do |x| %>
+  <p>
+    <strong>Date of Service:</strong>
+      <%= x.dos %>
+  </p>
+
+  <p>
+    <strong>Physician's Name:</strong>
+      <%= x.physician_first %>
+      <%= x.physician_last %>
+  </p>
+
+  <p>
+    <strong>Reason for Visit:</strong>
+      <%= x.reason_for_visit %>
+  </p>
+
+  <p>
+    <strong>Diagnosis:</strong>
+      <%= x.diagnosis %>
+  </p>
+
+  <p>
+    <strong>Physician Notes:</strong>
+      <%= x.dr_notes %>
+  </p>
+<% end %>

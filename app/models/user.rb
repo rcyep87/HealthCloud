@@ -16,4 +16,9 @@ class User < ActiveRecord::Base
   def current_prescriptions
     prescriptions.where("refill_till >= '#{Time.now}'")
   end
+
+  def most_recent_dr_visit
+    visits.order(dos: :desc).limit(1)
+  end
+
 end
