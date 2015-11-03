@@ -17,15 +17,46 @@ img {
 
 .dashcol {
   text-align: left;
-  font-size: 1rem;
+  font-weight: bold;
   padding: 50px 100px;
 }
 
-.ehr {
-  padding-top: 100px
-}
+// .ehr {
+//   padding-top: 30px
+// }
 
 section.white {
   background: white;
   padding: 100px;
+}
+
+.modal {
+  max-height: 85%;
+  max-width: 85%;
+  left:0;
+  right:0;
+  top:0;
+  bottom:100;
+  margin:auto;
+}
+
+#new-rx {
+  padding: 0px 70px;
+}
+
+#ehr-img {
+  margin-left: 40px;
+}
+
+.dash-caption {
+  padding-top: 10px;
+}
+
+#tos-modal {
+  margin-top: 250px;
+}
+
+.centered {
+  margin: 0 auto;
+  text-align: center;
 }

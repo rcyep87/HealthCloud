@@ -1,35 +1,31 @@
 <p id="notice"><%= notice %></p>
 
+<center><h2>Electronic Health Record</h2></center>
 
+<div class="row">
+  <div class="col m6 offset-m3">
   <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Add New Doctor Visit</a>
 
     <div id="modal1" class="modal">
       <div class="modal-content">
-        <h4>Add New Doctor Visit</h4>
+        <h4><center>Add New Doctor Visit</center></h4>
         <p><%= render "visits/form" %></p>
       </div>
-      <!-- <div class="modal-footer">
-        <a href="/ehr" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-      </div> -->
     </div>
 
-  <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Add New Rx</a>
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal2" id="new-rx">Add New Rx</a>
 
     <div id="modal2" class="modal">
       <div class="modal-content">
-        <h4>New Rx</h4>
+        <h4><center>New Rx</center></h4>
         <p><%= render "prescriptions/form" %></p>
       </div>
-      <!-- <div class="modal-footer">
-        <a href="/ehr" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-      </div> -->
     </div>
-
-
-<center><h2>Electronic Health Record</h2></center>
+  </div>
+</div>
 
     <div class="row ehr">
-      <div class="col m4 s4">
+      <div class="col m6 offset-m1 s6">
         <% if current_user.visits.blank? %>
         <% else %>
         <h4>Doctor Visits</h4>
@@ -68,7 +64,7 @@
         </tr>
       </p>
     </div>
-      <div class="col m4 s4">
+      <div class="col m5 s6">
         <h4>Prescription History</h4>
         <% if current_user.prescriptions.blank? %>
         <% else %>
@@ -115,22 +111,4 @@
           <% end %>
         <% end %>
         <% end %>
-        <div class="col m6 offset-m4 s2">
-          <h4>Add New Visit</h4>
-          <p>
-            <%= render "visits/form" %>
-          </p>
-        </div>
-          <h4>Add New Rx</h4>
-          <p>
-            <%= render "prescriptions/form" %>
-          </p>
-      <!-- <div class="col m3 offset-m1 s2">
-        <p>
-          <button class="btn waves-effect blue accent-2"><%= link_to "Submit Recent Doctor Visit", new_visit_path %></button>
-        </p>
-        <p>
-          <button><%= link_to "Submit Recent Rx",           new_prescription_path %></button>
-        </p>
-      </div> -->
-    </div>
+      </div>

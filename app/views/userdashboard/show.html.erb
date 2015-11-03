@@ -1,30 +1,47 @@
-  <div class="row dashboard">
+
+  <div class="row dashboard centered">
     <div class="col m3 offset-m2 s3 dashcol">
       <p>
         <% if current_user.med_coverage.blank? %>
           <%= link_to image_tag("id_card.jpeg"), new_med_coverage_path %>
-          <strong>Submit Your Plan Information</strong>
+          <p class="dash-captions">Submit Your Plan Information</p>
         <% else %>
           <%= link_to image_tag("id_card.jpeg"), med_coverage_path(current_user.med_coverage), class: "circle responsive-img" %>
-          <strong>Benefit Information</strong>
+          <p class="dash-captions">Benefit Information</p>
         <% end %>
       </p>
     </div>
-    <div class="col m3 s3 dashcol">
+    <div class="col m3 s3 dashcol" >
       <p>
         <% if current_user.visits.blank? %>
-          <%= link_to image_tag("EHR.jpeg"), ehr_path %>
-          <strong>Electronic Health Record</strong>
+          <%= link_to image_tag("EHR.jpeg", :id => "ehr-img"), ehr_path %>
+          <p class="dash-captions">Electronic Health Record</p>
         <% else %>
-          <%= link_to image_tag("EHR.jpeg"), ehr_path %>
-          <strong>Electronic Health Record</strong>
+          <%= link_to image_tag("EHR.jpeg", :id => "ehr-img"), ehr_path %>
+          <p class="dash-captions">Electronic Health Record</p>
         <% end %>
       </p>
     </div>
     <div class="col m3 s3 dashcol">
       <p>
         <%= link_to image_tag("graph.jpeg"), root_path %>
-        <strong>Health Data</strong>
+        <p class="dash-captions">Health Data</p>
       </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="centered">
+      <a class="waves-effect waves-light btn modal-trigger" id="tos-modal" href="#modal3">Terms of Service</a>
+
+      <div id="modal3" class="modal">
+        <div class="modal-content" >
+          <h4>Terms of Service</h4>
+          <p>By signing up for an account with our service, you have agreed or accepted the terms and conditions of our service agreement.</p>
+        </div>
+        <div class="modal-footer">
+          <a href="/dashboard" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+      </div>
     </div>
   </div>
