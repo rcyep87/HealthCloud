@@ -2,39 +2,34 @@
 
 <div class="row">
   <h3><strong>Benefit's Summary For </strong><strong><%= "#{@med_coverage.user.first_name} #{@med_coverage.user.last_name}" %></strong></h3>
+
   <p>
-    <strong>Carrier Name:</strong>
+    <strong>Carrier Name: </strong>
     <%= @med_coverage.carrier %>
-    <p>History</p>
-    <% @med_coverage.versions.each do |v| %>
-      <% med_version = v.reify(dup: true) %>
-      <% if med_version %>
-        <p><%= med_version.carrier %></p>
-      <% end %>
-    <% end %>
   </p>
+
   <p>
     <strong>Plan Level:</strong>
     <%= @med_coverage.plan_level %>
   </p>
 
   <p>
-    <strong>Network Type:</strong>
+    <strong>Network Type: </strong>
     <%= @med_coverage.network_type %>
   </p>
 
   <p>
-    <strong>PCP Fee:</strong>
+    <strong>PCP Fee: </strong>
     <%= " $#{@med_coverage.pcp_fee}" %>
   </p>
 
   <p>
-    <strong>Specialist Fee:</strong>
+    <strong>Specialist Fee: </strong>
     <%= " $#{@med_coverage.specialist_fee}" %>
   </p>
 
   <p>
-    <strong>ER Fee:</strong>
+    <strong>ER Fee: </strong>
     <%= " $#{@med_coverage.er_fee}" %>
   </p>
 
@@ -49,7 +44,7 @@
   <p>
     <% if @med_coverage.rx_generic_fee.blank? %>
     <% else %>
-      <strong>Rx Generic Fee:</strong>
+      <strong>Rx Generic Fee: </strong>
       <%= " $#{@med_coverage.rx_generic_fee}" %>
     <% end %>
   </p>
@@ -87,17 +82,22 @@
   </p>
 
   <p>
-    <strong>Co-insurance Percent:</strong>
+    <strong>Co-insurance Percent: </strong>
     <%= "#{@med_coverage.co_ins_percent}" %>
   </p>
 
   <p>
-    <strong>Annual Out of Pocket Max:</strong>
+    <strong>Annual Out of Pocket Max: </strong>
     <%= " $#{@med_coverage.out_of_pocket_max}" %>
   </p>
 
   <p>
-    <strong>Renewal Date:</strong>
+    <strong>Effective Date: </strong>
+    <%= @med_coverage.formatted_effective_date %>
+  </p>
+
+  <p>
+    <strong>Renewal Date: </strong>
     <%= @med_coverage.formatted_renewal_date %>
   </p>
 
