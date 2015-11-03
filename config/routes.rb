@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   get  "/dashboard" => "userdashboard#show"
   get  "/ehr" => "ehr#show"
+  get "/health" => "health_data#show"
 
   root to: "home#index"
 
