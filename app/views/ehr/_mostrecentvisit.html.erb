@@ -21,7 +21,15 @@
   </p>
 
   <p>
-    <strong>Physician Notes:</strong>
+  <% if x.dr_notes.blank? %>
+    <p>
+      <strong>Physician Notes: </strong>
+      <%= "No notes provided by doctor." %>
+    </p>
+  <% else %>
+    <p>
+    <strong>Physician Notes: </strong>
       <%= x.dr_notes %>
-  </p>
+    </p>
+  <% end %>
 <% end %>
