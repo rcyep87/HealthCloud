@@ -13,7 +13,7 @@
     </div>
     <div class="col m3 s3 dashcol" >
       <p>
-        <% if current_user.visits.blank? %>
+        <% if current_user.visits.blank? || current_user.prescriptions.blank? %>
           <%= link_to image_tag("EHR.jpeg", :id => "ehr-img"), ehr_path %>
           <p class="dash-captions">Electronic Health Record</p>
         <% else %>
