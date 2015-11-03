@@ -13,7 +13,11 @@
   </p>
   <p>
     <strong>Brand?: </strong>
-    <%= x.brand %>
+    <% if x.brand == true %>
+      <%= "Yes" %>
+    <% else %>
+      <%= "No" %>
+    <% end %>
   </p>
   <p>
     <strong>Refill Till: </strong>

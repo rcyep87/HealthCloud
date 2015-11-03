@@ -24,5 +24,9 @@ class User < ActiveRecord::Base
   def most_recent_rx
     prescriptions.order(date_prescribed: :desc).limit(1)
   end
-  
+
+  def user_prescriptions
+    prescriptions
+  end
+
 end
