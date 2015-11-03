@@ -1,7 +1,7 @@
 <% current_user.most_recent_rx.each do |x| %>
   <p>
     <strong>Date Prescribed:</strong>
-      <%= x.date_prescribed %>
+      <%= x.formatted_date_prescribed %>
   </p>
   <p>
     <strong>Dosage: </strong>
@@ -17,7 +17,7 @@
   </p>
   <p>
     <strong>Refill Till: </strong>
-    <%= x.refill_till %>
+    <%= x.formatted_refill_till %>
   </p>
   <% if x.rx_notes.blank? %>
     <p>

@@ -1,7 +1,7 @@
 <% current_user.most_recent_dr_visit.each do |x| %>
   <p>
     <strong>Date of Service:</strong>
-      <%= x.dos %>
+      <%= x.formatted_dos %>
   </p>
 
   <p>
