@@ -39,7 +39,7 @@
         <% if current_user.prescriptions.blank? %>
         <% else %>
           <% current_user.most_recent_rx.each do |x| %>
-            <div class="card light-blue darken-1">
+            <div class="card blue lighten-2">
               <div class="card-content white-text">
                 <span class="card-title"><center><%= x.name %></center></span>
                 <%= render "mostrecentrx" %>
