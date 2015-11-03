@@ -2,14 +2,19 @@
 
 <h1><center>Your Prescription's History</center></h1>
 
-<div class="col m3 offset-m6">
+<div class="row">
   <% @user_prescriptions.each do |x| %>
-    <div class="card light-blue darken-1">
+  <div class="col m4">
+    <div class="card blue lighten-2">
       <div class="card-content white-text">
         <span class="card-title"><center><%= x.name %></center></span>
           <p>
             <strong>Date Prescribed: </strong>
             <%= x.formatted_date_prescribed %>
+          </p>
+          <p>
+            <strong>Refill Till: </strong>
+            <%= x.formatted_refill_till %>
           </p>
           <p>
             <strong>Dosage: </strong>
@@ -27,10 +32,6 @@
               <%= "No" %>
             <% end %>
           </p>
-          <p>
-            <strong>Refill Till: </strong>
-            <%= x.formatted_refill_till %>
-          </p>
           <% if x.rx_notes.blank? %>
             <p>
               <strong>Notes from Pharmacist: </strong>
@@ -47,5 +48,6 @@
         <%= link_to "Edit", edit_prescription_path(x) %>
       </div>
     </div>
+    </div>
     <% end %>
-  </div>
+</div>
