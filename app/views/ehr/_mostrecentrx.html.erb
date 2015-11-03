@@ -1,0 +1,33 @@
+<% current_user.most_recent_rx.each do |x| %>
+  <p>
+    <strong>Date Prescribed:</strong>
+      <%= x.date_prescribed %>
+  </p>
+  <p>
+    <strong>Dosage: </strong>
+    <%= "#{x.dosage}mg" %>
+  </p>
+  <p>
+    <strong>Frequency: </strong>
+    <%= x.frequency %>
+  </p>
+  <p>
+    <strong>Brand?: </strong>
+    <%= x.brand %>
+  </p>
+  <p>
+    <strong>Refill Till: </strong>
+    <%= x.refill_till %>
+  </p>
+  <% if x.rx_notes.blank? %>
+    <p>
+      <strong>Notes from Pharmacist: </strong>
+      <%= "No notes provided." %>
+    </p>
+  <% else %>
+    <p>
+      <strong>Notes from Pharmacist: </strong>
+      <%= x.rx_notes %>
+    </p>
+  <% end %>
+<% end %>

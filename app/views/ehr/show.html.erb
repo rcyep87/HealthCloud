@@ -38,44 +38,14 @@
         <h4><center>Most Recent Rx</center></h4>
         <% if current_user.prescriptions.blank? %>
         <% else %>
-          <% current_user.current_prescriptions.each do |p| %>
+          <% current_user.most_recent_rx.each do |x| %>
             <div class="card light-blue darken-1">
               <div class="card-content white-text">
-                <span class="card-title"><center><%= p.name %></center></span>
-                <p>
-                  <strong>Date Prescribed: </strong>
-                  <%= p.date_prescribed %>
-                </p>
-                <p>
-                  <strong>Dosage: </strong>
-                  <%= "#{p.dosage}mg" %>
-                </p>
-                <p>
-                  <strong>Frequency: </strong>
-                  <%= p.frequency %>
-                </p>
-                <p>
-                  <strong>Brand?: </strong>
-                  <%= p.brand %>
-                </p>
-                <p>
-                  <strong>Refill Till: </strong>
-                  <%= p.refill_till %>
-                </p>
-                <% if p.rx_notes.blank? %>
-                  <p>
-                    <strong>Notes from Pharmacist: </strong>
-                    <%= "No notes provided." %>
-                  </p>
-                <% else %>
-                  <p>
-                    <strong>Notes from Pharmacist: </strong>
-                    <%= p.rx_notes %>
-                  </p>
-                <% end %>
+                <span class="card-title"><center><%= x.name %></center></span>
+                <%= render "mostrecentrx" %>
               </div>
               <div class="card-action">
-                <%= link_to "Edit", edit_prescription_path(p) %>
+                <%= link_to "Edit", edit_prescription_path(x) %>
               </div>
             </div>
           <% end %>
