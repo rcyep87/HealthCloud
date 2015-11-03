@@ -29,13 +29,13 @@
         <% if current_user.visits.blank? %>
           <h4> You have no visits yet </h4>
         <% else %>
-          <h4>Doctor Visits</h4>
+          <h4>Most Recent Dr Visit</h4>
           <%= render "mostrecentvisit" %>
         <% end %>
         </p>
       </div>
       <div class="col m5 s6">
-        <h4><center>Prescription History</center></h4>
+        <h4><center>Most Recent Rx</center></h4>
         <% if current_user.prescriptions.blank? %>
         <% else %>
           <% current_user.current_prescriptions.each do |p| %>
