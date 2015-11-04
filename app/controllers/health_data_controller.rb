@@ -1,9 +1,9 @@
 class HealthDataController < ApplicationController
   def show
-    @steps = Step.new
-    @steps.user = current_user
+    @step = Step.new
+    @step.user = current_user
 
-    @sleeps = Sleep.new
-    @sleeps.user = current_user
+    @sleep = Sleep.new
+    @sleep.user = current_user
   end
 end

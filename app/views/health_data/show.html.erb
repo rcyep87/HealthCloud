@@ -1,5 +1,27 @@
 <h1><center>Health Tracking</center></h1>
 
+<div class="row">
+  <div class="col m4 offset-m3">
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal4">Record Today's Steps</a>
+
+    <div id="modal4" class="modal">
+      <div class="modal-content">
+        <h4><center>Record Today's Steps</center></h4>
+        <p><%= render "steps/form" %></p>
+      </div>
+    </div>
+
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal5" id="new-sleep">Record Today's Sleep</a>
+
+    <div id="modal5" class="modal">
+      <div class="modal-content">
+        <h4><center>Record Today's Sleep Hours</center></h4>
+        <p><%= render "sleeps/form" %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="row healthdash">
 
   <div class="col m6">
