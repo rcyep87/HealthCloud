@@ -1,7 +1,7 @@
 <h1><center>Health Tracking</center></h1>
 
 <div class="row">
-  <div class="col m4 offset-m3">
+  <div class="col m3 offset-m3">
   <a class="waves-effect waves-light btn modal-trigger" href="#modal4">Record Today's Steps</a>
 
     <div id="modal4" class="modal">
@@ -10,6 +10,7 @@
         <p><%= render "steps/form" %></p>
       </div>
     </div>
+  </div>
 
   <a class="waves-effect waves-light btn modal-trigger" href="#modal5" id="new-sleep">Record Today's Sleep</a>
 
@@ -19,17 +20,28 @@
         <p><%= render "sleeps/form" %></p>
       </div>
     </div>
-  </div>
 </div>
 
 <div class="row healthdash">
+    <div class="col m6">
+      <h4><center>Activity</center></h4>
+      <h5>Activity Today</h5>
+      <p>current</p>
+        <div class="card-panel blue lighten-2">
+          <span class="white-text">
 
-  <div class="col m6">
-    <h4><center>Activity<center></h4>
-  </div>
+          </span>
+        </div>
+    </div>
 
   <div class="col m6">
     <h4><center>Sleep</center></h4>
+    <div class="card-panel blue lighten-2">
+      <span class="white-text">I am a very simple card. I am good at containing small bits of information.
+      I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+      </span>
+    </div>
+
   </div>
 
 </div>

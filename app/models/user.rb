@@ -29,4 +29,8 @@ class User < ActiveRecord::Base
     prescriptions
   end
 
+  def today_steps
+    steps.order()
+  end
+
 end

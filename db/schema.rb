@@ -11,16 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151103200757) do
+ActiveRecord::Schema.define(version: 20151104202034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "exercises", force: :cascade do |t|
-    t.integer  "minutes",    null: false
+    t.integer  "minutes",       null: false
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.date     "date_of_steps", null: false
   end
 
   add_index "exercises", ["user_id"], name: "index_exercises_on_user_id", using: :btree
@@ -66,19 +67,21 @@ ActiveRecord::Schema.define(version: 20151103200757) do
   add_index "prescriptions", ["user_id"], name: "index_prescriptions_on_user_id", using: :btree
 
   create_table "sleeps", force: :cascade do |t|
-    t.integer  "minutes",    null: false
+    t.integer  "minutes",       null: false
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.date     "date_of_sleep", null: false
   end
 
   add_index "sleeps", ["user_id"], name: "index_sleeps_on_user_id", using: :btree
 
   create_table "steps", force: :cascade do |t|
-    t.integer  "steps_today", null: false
+    t.integer  "steps_today",   null: false
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.date     "date_of_steps", null: false
   end
 
   add_index "steps", ["user_id"], name: "index_steps_on_user_id", using: :btree
