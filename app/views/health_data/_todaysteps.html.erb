@@ -1,6 +1,5 @@
 <% current_user.today_steps.each do |x| %>
   <p>
-    <strong><%= "Steps made on #{x.formatted_step_date}" %>:</strong>
-      <%= x.steps_today %>
+    <%= "#{x.steps_today} steps" %>
   </p>
 <% end %>
