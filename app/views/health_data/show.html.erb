@@ -4,7 +4,7 @@
 
 <div class="row">
   <div class="col m3 offset-m3">
-  <a class="waves-effect waves-light btn modal-trigger" href="#modal4">Record Today's Steps</a>
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal4" id="today-steps">Record Today's Steps</a>
 
     <div id="modal4" class="modal">
       <div class="modal-content">
@@ -14,7 +14,7 @@
     </div>
   </div>
 
-  <a class="waves-effect waves-light btn modal-trigger" href="#modal5" id="new-sleep">Record Today's Sleep</a>
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal5" id="today-sleeps">Record Today's Sleep</a>
 
     <div id="modal5" class="modal">
       <div class="modal-content">
@@ -28,12 +28,12 @@
     <div class="col m6">
       <h4><center>Today's Activity</center></h4>
       <p><center><%= render "todaysteps" %></center></p>
-        <%= column_chart current_user.steps.group_by_day(:date_of_steps, format: "%b %e %Y").count %>
+        <%= line_chart current_user.steps.group_by_day(:date_of_steps).sum(:steps_today) %>
     </div>
 
   <div class="col m6">
     <h4><center>Hours Slept Today</center></h4>
     <p><center><%= render "todayslepthours" %></center></p>
-      <%= column_chart current_user.sleeps.group_by_day(:date_of_sleep, format: "%b %e %Y").count %>
+      <%= column_chart current_user.sleeps.group_by_day(:date_of_sleep).sum(:minutes) %>
   </div>
 </div>
