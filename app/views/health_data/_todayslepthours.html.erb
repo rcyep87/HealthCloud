@@ -1,0 +1,5 @@
+<% current_user.today_slept_hours.each do |x| %>
+  <p>
+    <%= "#{x.minutes/60} hours" %>
+  </p>
+<% end %>

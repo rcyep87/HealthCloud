@@ -24,9 +24,8 @@
 
 <div class="row healthdash">
     <div class="col m6">
-      <h4><center>Activity</center></h4>
-      <h5>Activity Today</h5>
-      <p>current</p>
+      <h4><center>Today's Activity</center></h4>
+      <p><center><%= render "todaysteps" %></center></p>
         <div class="card-panel blue lighten-2">
           <span class="white-text">
 
@@ -35,10 +34,11 @@
     </div>
 
   <div class="col m6">
-    <h4><center>Sleep</center></h4>
+    <h4><center>Hours Slept Today</center></h4>
+    <p><center><%= render "todayslepthours" %></center></p>
     <div class="card-panel blue lighten-2">
-      <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-      I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+      <span class="white-text">
+        
       </span>
     </div>
 

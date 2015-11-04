@@ -30,7 +30,11 @@ class User < ActiveRecord::Base
   end
 
   def today_steps
-    steps.order()
+    steps.order(date_of_steps: :desc).limit(1)
+  end
+
+  def today_slept_hours
+    sleeps.order(date_of_sleep: :desc).limit(1)
   end
 
 end
