@@ -46,6 +46,14 @@
         </div>
       <div class="card-action">
         <%= link_to "Edit", edit_prescription_path(x) %>
+        <a class="waves-effect waves-light btn modal-trigger" href="#modal5">Schedule Reminder</a>
+
+          <div id="modal5" class="modal">
+            <div class="modal-content">
+              <h4><center>Schedule Reminder</center></h4>
+              <p><%= render "rx_alerts/form", locals: { prescription_id: x.id } %></p>
+            </div>
+          </div>
       </div>
     </div>
     </div>

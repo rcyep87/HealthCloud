@@ -200,7 +200,6 @@ PLATFORMS
 DEPENDENCIES
   byebug
   chartkick
-  coffee-rails (~> 4.1.0)
   devise
   faker
   figaro

@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :steps
   has_many :sleeps
   has_many :exercises
+  has_many :rx_alerts
 
   has_paper_trail
 

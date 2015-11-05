@@ -1,0 +1,26 @@
+<%= form_for(@rx_alert) do |f| %>
+  <% if @rx_alert.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rx_alert.errors.count, "error") %> prohibited this prescription from being saved:</h2>
+
+      <ul>
+      <% @rx_alert.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :time_to_take %><br>
+    <%= f.datetime_field :time_to_take, class: "datepicker" %>
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field :prescription_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

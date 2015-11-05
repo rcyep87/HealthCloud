@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :med_coverages
   resources :prescriptions
   resources :visits
+  resources :rx_alerts
   devise_for :users
 
   get  "/dashboard" => "userdashboard#show"

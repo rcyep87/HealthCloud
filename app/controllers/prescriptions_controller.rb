@@ -4,8 +4,9 @@ class PrescriptionsController < ApplicationController
   # GET /prescriptions
   # GET /prescriptions.json
   def index
-    @prescriptions = Prescription.all
     @user_prescriptions = current_user.prescriptions
+    @rx_alert = RxAlert.new
+    @rx_alert.user = current_user
   end
 
   # GET /prescriptions/1

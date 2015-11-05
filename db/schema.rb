@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151104202034) do
+ActiveRecord::Schema.define(version: 20151105220525) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,17 @@ ActiveRecord::Schema.define(version: 20151104202034) do
 
   add_index "prescriptions", ["user_id"], name: "index_prescriptions_on_user_id", using: :btree
 
+  create_table "rx_alerts", force: :cascade do |t|
+    t.time     "time_to_take",    null: false
+    t.integer  "user_id"
+    t.integer  "prescription_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "rx_alerts", ["prescription_id"], name: "index_rx_alerts_on_prescription_id", using: :btree
+  add_index "rx_alerts", ["user_id"], name: "index_rx_alerts_on_user_id", using: :btree
+
   create_table "sleeps", force: :cascade do |t|
     t.integer  "minutes",       null: false
     t.integer  "user_id"
@@ -104,6 +115,7 @@ ActiveRecord::Schema.define(version: 20151104202034) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "mobile_phone"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -137,6 +149,8 @@ ActiveRecord::Schema.define(version: 20151104202034) do
   add_foreign_key "exercises", "users"
   add_foreign_key "med_coverages", "users"
   add_foreign_key "prescriptions", "users"
+  add_foreign_key "rx_alerts", "prescriptions"
+  add_foreign_key "rx_alerts", "users"
   add_foreign_key "sleeps", "users"
   add_foreign_key "steps", "users"
   add_foreign_key "visits", "users"

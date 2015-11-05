@@ -5,6 +5,10 @@ class EhrController < ApplicationController
 
     @prescription = Prescription.new
     @prescription.user = current_user
+
+    @rx_alert = RxAlert.new
+    @rx_alert.user = current_user
+    
   end
 
   private
