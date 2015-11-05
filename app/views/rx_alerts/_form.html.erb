@@ -12,8 +12,25 @@
   <% end %>
 
   <div class="field">
+    <%= f.check_box :M %>
+    <%= f.label :M, class: "rx-sched-label" %>
+    <%= f.check_box :T %>
+    <%= f.label :T, class: "rx-sched-label" %>
+    <%= f.check_box :W %>
+    <%= f.label :W, class: "rx-sched-label" %>
+    <%= f.check_box :Th %>
+    <%= f.label :Th, class: "rx-sched-label" %>
+    <%= f.check_box :F %>
+    <%= f.label :F, class: "rx-sched-label" %>
+    <%= f.check_box :S %>
+    <%= f.label :S, class: "rx-sched-label" %>
+    <%= f.check_box :Su %>
+    <%= f.label :Su, class: "rx-sched-label" %>
+  </div>
+
+  <div class="field">
     <%= f.label :time_to_take %><br>
-    <%= f.datetime_field :time_to_take, class: "datepicker" %>
+    <%= f.time_field :time_to_take %>
   </div>
 
   <div class="field">
