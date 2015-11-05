@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get  "/dashboard" => "userdashboard#show"
   get  "/ehr" => "ehr#show"
   get "/health" => "health_data#show"
+  get '/txt', to: 'twilio#send_txt', as: 'txt'
 
   root to: "home#index"
 
