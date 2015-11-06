@@ -7,22 +7,22 @@
   <div class="col m4">
     <div class="card blue lighten-2">
       <div class="card-content white-text">
-        <span class="card-title"><center><%= x.name %></center></span>
+        <span class="card-title"><center><%= "#{x.name} #{x.id}" %></center></span>
           <p>
             <strong>Date Prescribed: </strong>
-            <%= x.formatted_date_prescribed %>
+              <%= x.formatted_date_prescribed %>
           </p>
           <p>
             <strong>Refill Till: </strong>
-            <%= x.formatted_refill_till %>
+              <%= x.formatted_refill_till %>
           </p>
           <p>
             <strong>Dosage: </strong>
-            <%= "#{x.dosage}mg" %>
+              <%= "#{x.dosage}mg" %>
           </p>
           <p>
             <strong>Frequency: </strong>
-            <%= x.frequency %>
+              <%= x.frequency %>
           </p>
           <p>
             <strong>Brand?: </strong>
@@ -35,23 +35,23 @@
           <% if x.rx_notes.blank? %>
             <p>
               <strong>Notes from Pharmacist: </strong>
-              <%= "No notes provided by pharmacist." %>
+                <%= "No notes provided by pharmacist." %>
             </p>
           <% else %>
             <p>
               <strong>Notes from Pharmacist: </strong>
-              <%= x.rx_notes %>
+                <%= x.rx_notes %>
             </p>
           <% end %>
         </div>
       <div class="card-action">
         <%= link_to "Edit", edit_prescription_path(x) %>
-        <a class="waves-effect waves-light btn modal-trigger" href="#modal5">Schedule Reminder</a>
+        <a class="waves-effect waves-light btn modal-trigger" href="<%= "#modal#{x.id}" %>">Schedule Reminder</a>
 
-          <div id="modal5" class="modal">
+          <div id="<%= "modal#{x.id}" %>" class="modal">
             <div class="modal-content">
-              <h4><center>Schedule Reminder</center></h4>
-              <p><%= render "rx_alerts/form", locals: { prescription_id: x.id } %></p>
+              <h4><center>Schedule Reminder for <%= x.name.titleize %> </center></h4>
+              <p><%= render partial: "rx_alerts/form", locals: { prescription_id: x.id } %></p>
             </div>
           </div>
       </div>

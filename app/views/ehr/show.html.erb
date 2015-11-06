@@ -56,7 +56,7 @@
             <div class="card blue lighten-2">
               <div class="card-content white-text">
                 <span class="card-title"><center><%= x.name %></center></span>
-                <%= render "mostrecentrx" %>
+                <%= render partial: "mostrecentrx" %>
               </div>
               <div class="card-action">
                 <%= link_to "Edit", edit_prescription_path(x) %>
@@ -66,7 +66,7 @@
                   <div id="modal5" class="modal">
                     <div class="modal-content">
                       <h4><center>Schedule Reminder</center></h4>
-                      <p><%= render "rx_alerts/form", locals: { prescription_id: x.id } %></p>
+                      <p><%= render partial: "rx_alerts/form", locals: { :prescription_id => x.id } %></p>
                     </div>
                   </div>
               </div>

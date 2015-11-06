@@ -26,6 +26,6 @@ class RxAlertsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rx_alert_params
-      params.require(:rx_alert).permit(:time_to_take, :user_id, :prescription_id)
+      params.require(:rx_alert).permit(:time_to_take, :user_id, :prescription_id, :M, :T, :W, :Th, :F, :S, :Su)
     end
 end
