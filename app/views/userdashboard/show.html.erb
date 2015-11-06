@@ -3,10 +3,10 @@
     <div class="col m3 offset-m2 s3 dashcol">
       <p>
         <% if current_user.med_coverage.blank? %>
-          <%= link_to image_tag("id_card.jpeg"), new_med_coverage_path %>
+          <%= link_to image_tag("id_card.jpg"), new_med_coverage_path %>
           <p class="dash-captions">Submit Your Plan Information</p>
         <% else %>
-          <%= link_to image_tag("id_card.jpeg"), med_coverage_path(current_user.med_coverage), class: "circle responsive-img" %>
+          <%= link_to image_tag("id_card.jpg"), med_coverage_path(current_user.med_coverage), class: "circle responsive-img" %>
           <p class="dash-captions">Benefit Information</p>
         <% end %>
       </p>
@@ -14,17 +14,17 @@
     <div class="col m3 s3 dashcol" >
       <p>
         <% if current_user.visits.blank? || current_user.prescriptions.blank? %>
-          <%= link_to image_tag("EHR.jpeg", :id => "ehr-img"), ehr_path %>
+          <%= link_to image_tag("EHR.jpg", :id => "ehr-img"), ehr_path %>
           <p class="dash-captions">Electronic Health Record</p>
         <% else %>
-          <%= link_to image_tag("EHR.jpeg", :id => "ehr-img"), ehr_path %>
+          <%= link_to image_tag("EHR.jpg", :id => "ehr-img"), ehr_path %>
           <p class="dash-captions">Electronic Health Record</p>
         <% end %>
       </p>
     </div>
     <div class="col m3 s3 dashcol">
       <p>
-        <%= link_to image_tag("graph.jpeg"), health_path %>
+        <%= link_to image_tag("graph.jpg"), health_path %>
         <p class="dash-captions health-data-heading">Health Data</p>
       </p>
     </div>
