@@ -38,9 +38,10 @@ task :send_reminder => :environment do
   five_min_before = (Time.now - 300)
   five_min_after  = (Time.now + 300)
   event_range = five_min_before..five_min_after
+  adjusted_time = DateTime.now.change({ hour: time.hour, min: time.min })
 
-  if event_range.cover?(time)
-    puts "DEBUG: SENDING"
-    send_text(mobile, user_first_name, rx_name)
+  if event_range.cover?(adjusted_time)
+    puts "DEBUG: SENDING MESSAGE"
+    send_txt(mobile, user_first_name, rx_name)
   end
 end
