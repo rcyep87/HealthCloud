@@ -1,106 +1,113 @@
 <p id="notice"><%= notice %></p>
 
-<div class="row">
-  <h3><strong><center>Benefit's Summary For </strong><strong><%= "#{@med_coverage.user.first_name} #{@med_coverage.user.last_name}" %></center></strong></h3>
+<div class="row benefit-card">
+  <div class="col m6 offset-m3 s6">
+    <div class="card blue lighten-2">
+      <div class="card-content white-text">
+        <span class="card-title"><center>Benefit's Summary For <%= "#{@med_coverage.user.first_name} #{@med_coverage.user.last_name}" %></center></span><br />
+        <p>
+          <strong>Carrier Name: </strong>
+          <%= @med_coverage.carrier %>
+        </p>
 
-  <p>
-    <strong>Carrier Name: </strong>
-    <%= @med_coverage.carrier %>
-  </p>
+        <p>
+          <strong>Plan Level:</strong>
+          <%= @med_coverage.plan_level %>
+        </p>
 
-  <p>
-    <strong>Plan Level:</strong>
-    <%= @med_coverage.plan_level %>
-  </p>
+        <p>
+          <strong>Network Type: </strong>
+          <%= @med_coverage.network_type %>
+        </p>
 
-  <p>
-    <strong>Network Type: </strong>
-    <%= @med_coverage.network_type %>
-  </p>
+        <p>
+          <strong>PCP Fee: </strong>
+          <%= " $#{@med_coverage.pcp_fee}" %>
+        </p>
 
-  <p>
-    <strong>PCP Fee: </strong>
-    <%= " $#{@med_coverage.pcp_fee}" %>
-  </p>
+        <p>
+          <strong>Specialist Fee: </strong>
+          <%= " $#{@med_coverage.specialist_fee}" %>
+        </p>
 
-  <p>
-    <strong>Specialist Fee: </strong>
-    <%= " $#{@med_coverage.specialist_fee}" %>
-  </p>
+        <p>
+          <strong>ER Fee: </strong>
+          <%= " $#{@med_coverage.er_fee}" %>
+        </p>
 
-  <p>
-    <strong>ER Fee: </strong>
-    <%= " $#{@med_coverage.er_fee}" %>
-  </p>
+        <p>
+          <% if @med_coverage.rx_brand_fee.blank? %>
+          <% else %>
+            <strong>Rx Brand Fee:</strong>
+            <%= " $#{@med_coverage.rx_brand_fee}" %>
+          <% end %>
+        </p>
 
-  <p>
-    <% if @med_coverage.rx_brand_fee.blank? %>
-    <% else %>
-      <strong>Rx Brand Fee:</strong>
-      <%= " $#{@med_coverage.rx_brand_fee}" %>
-    <% end %>
-  </p>
+        <p>
+          <% if @med_coverage.rx_generic_fee.blank? %>
+          <% else %>
+            <strong>Rx Generic Fee: </strong>
+            <%= " $#{@med_coverage.rx_generic_fee}" %>
+          <% end %>
+        </p>
 
-  <p>
-    <% if @med_coverage.rx_generic_fee.blank? %>
-    <% else %>
-      <strong>Rx Generic Fee: </strong>
-      <%= " $#{@med_coverage.rx_generic_fee}" %>
-    <% end %>
-  </p>
+        <p>
+          <% if @med_coverage.in_net_deduct_ind.blank? %>
+          <% else %>
+            <strong>In-Network Deductible - Individual:</strong>
+            <%= " $#{@med_coverage.in_net_deduct_ind}" %>
+          <% end %>
+        </p>
 
-  <p>
-    <% if @med_coverage.in_net_deduct_ind.blank? %>
-    <% else %>
-      <strong>In-Network Deductible - Individual:</strong>
-      <%= " $#{@med_coverage.in_net_deduct_ind}" %>
-    <% end %>
-  </p>
+        <p>
+          <% if @med_coverage.in_net_deduct_fam.blank? %>
+          <% else %>
+            <strong>In-Network Deductible - Family:</strong>
+            <%= " $#{@med_coverage.in_net_deduct_fam}" %>
+          <% end %>
+        </p>
 
-  <p>
-    <% if @med_coverage.in_net_deduct_fam.blank? %>
-    <% else %>
-      <strong>In-Network Deductible - Family:</strong>
-      <%= " $#{@med_coverage.in_net_deduct_fam}" %>
-    <% end %>
-  </p>
+        <p>
+          <% if @med_coverage.out_net_deduct_ind.blank? %>
+          <% else %>
+            <strong>Out-of-Network Deductible - Individual:</strong>
+            <%= " $#{@med_coverage.out_net_deduct_ind}" %>
+          <% end %>
+        </p>
 
-  <p>
-    <% if @med_coverage.out_net_deduct_ind.blank? %>
-    <% else %>
-      <strong>Out-of-Network Deductible - Individual:</strong>
-      <%= " $#{@med_coverage.out_net_deduct_ind}" %>
-    <% end %>
-  </p>
+        <p>
+          <% if @med_coverage.out_net_deduct_fam.blank? %>
+          <% else %>
+            <strong>Out-of-Network Deductible - Family:</strong>
+            <%= " $#{@med_coverage.out_net_deduct_fam}" %>
+          <% end %>
+        </p>
 
-  <p>
-    <% if @med_coverage.out_net_deduct_fam.blank? %>
-    <% else %>
-      <strong>Out-of-Network Deductible - Family:</strong>
-      <%= " $#{@med_coverage.out_net_deduct_fam}" %>
-    <% end %>
-  </p>
+        <p>
+          <strong>Co-insurance Percent: </strong>
+          <%= "#{@med_coverage.co_ins_percent}" %>
+        </p>
 
-  <p>
-    <strong>Co-insurance Percent: </strong>
-    <%= "#{@med_coverage.co_ins_percent}" %>
-  </p>
+        <p>
+          <strong>Annual Out of Pocket Max: </strong>
+          <%= " $#{@med_coverage.out_of_pocket_max}" %>
+        </p>
 
-  <p>
-    <strong>Annual Out of Pocket Max: </strong>
-    <%= " $#{@med_coverage.out_of_pocket_max}" %>
-  </p>
+        <p>
+          <strong>Effective Date: </strong>
+          <%= @med_coverage.formatted_effective_date %>
+        </p>
 
-  <p>
-    <strong>Effective Date: </strong>
-    <%= @med_coverage.formatted_effective_date %>
-  </p>
+        <p>
+          <strong>Renewal Date: </strong>
+          <%= @med_coverage.formatted_renewal_date %>
+        </p>
 
-  <p>
-    <strong>Renewal Date: </strong>
-    <%= @med_coverage.formatted_renewal_date %>
-  </p>
-
-  <%= link_to 'Edit', edit_med_coverage_path(@med_coverage) %> |
-  <%= link_to 'Back', med_coverages_path %>
+      </div>
+      <div class="card-action">
+        <%= link_to 'Edit', edit_med_coverage_path(@med_coverage) %> |
+        <%= link_to 'Back', med_coverages_path %>
+      </div>
+    </div>
+  </div>
 </div>
