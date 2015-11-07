@@ -2,9 +2,10 @@
  $primary-color: color("blue", "lighten-2") !default;
  @import 'materialize';
 
-.homepage {
-  background-image: url("assets/boardwalk.jpeg");
-}
+ body {
+ 	background-image: asset-path("mediwallet-background.jpg") center center no-repeat;
+ 	background-size: cover;
+ }
 
  .highlight {
    background-color: #EF5B24;
@@ -90,7 +91,13 @@ a {
 }
 
 #most-recent-rx-h4 {
-  padding-left: 35px;
+  padding-left: 110px;
+  padding-top:  5px;
+}
+
+#most-recent-dr-h4 {
+  padding-left: 70px;
+  padding-top:  5px;
 }
 
 .rx-sched-label {
@@ -106,6 +113,7 @@ nav .brand-logo {
 }
 
 nav ul a {
+  padding-left:  30px;
   padding-right: 30px;
 }
 
