@@ -2,10 +2,10 @@
  $primary-color: color("blue", "lighten-2") !default;
  @import 'materialize';
 
- body {
+.homepage {
  	background-image: image-url("london-life.jpg");
  	background-size: cover;
- }
+}
 
  .highlight {
    background-color: #EF5B24;

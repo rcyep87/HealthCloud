@@ -5,29 +5,53 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 
-  <nav>
-    <div class="nav-wrapper blue">
-      <a href="" class="brand-logo">MediWallet</a>
-      <ul class="right hide-on-med-and-down">
-        <% if user_signed_in? %>
-          <li><%= link_to 'Home', root_path %></li>
-          <li><%= link_to 'Dashboard', dashboard_path %></li>
-          <li><%= link_to('Logout', destroy_user_session_path, method: :DELETE) %></li>
-        <% else %>
-          <li><%= link_to 'Home', root_path %></li>
-          <li><%= link_to 'Create Account', new_user_registration_path %></li>
-          <li><%= link_to 'Login', new_user_session_path %></li>
-        <% end %>
-      </ul>
-    </div>
-  </nav>
+  <% if controller_name == "home" %>
+    <body class="homepage">
+      <nav>
+        <div class="nav-wrapper blue">
+          <a href="" class="brand-logo">MediWallet</a>
+          <ul class="right hide-on-med-and-down">
+            <% if user_signed_in? %>
+              <li><%= link_to 'Home', root_path %></li>
+              <li><%= link_to 'Dashboard', dashboard_path %></li>
+              <li><%= link_to('Logout', destroy_user_session_path, method: :DELETE) %></li>
+            <% else %>
+              <li><%= link_to 'Home', root_path %></li>
+              <li><%= link_to 'Create Account', new_user_registration_path %></li>
+              <li><%= link_to 'Login', new_user_session_path %></li>
+            <% end %>
+          </ul>
+        </div>
+      </nav>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </body>
+  <% else %>
+    <body>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+      <nav>
+        <div class="nav-wrapper blue">
+          <a href="" class="brand-logo">MediWallet</a>
+          <ul class="right hide-on-med-and-down">
+            <% if user_signed_in? %>
+              <li><%= link_to 'Home', root_path %></li>
+              <li><%= link_to 'Dashboard', dashboard_path %></li>
+              <li><%= link_to('Logout', destroy_user_session_path, method: :DELETE) %></li>
+            <% else %>
+              <li><%= link_to 'Home', root_path %></li>
+              <li><%= link_to 'Create Account', new_user_registration_path %></li>
+              <li><%= link_to 'Login', new_user_session_path %></li>
+            <% end %>
+          </ul>
+        </div>
+      </nav>
 
-    <%= yield %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-</body>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
+        <%= yield %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    </body>
+  <% end %>
 </html>
