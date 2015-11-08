@@ -6,7 +6,7 @@
   <%= csrf_meta_tags %>
 </head>
 
-  <% if controller_name == "home" %>
+  <% if controller_name == "home" || "devise" %>
     <body class="homepage">
       <nav>
         <div class="nav-wrapper blue">
@@ -26,6 +26,9 @@
       </nav>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
+
+      <%= yield %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     </body>
   <% else %>
     <body>
