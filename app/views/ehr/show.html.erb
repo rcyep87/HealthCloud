@@ -1,7 +1,7 @@
 <center><h2>Electronic Health Record</h2></center>
 
 <div class="row">
-  <div class="col m4 offset-m2">
+  <div class="col m4 offset-m3">
   <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Add New Doctor Visit</a>
 
     <div id="modal1" class="modal">
@@ -12,7 +12,7 @@
     </div>
   </div>
 
-  <div class="col m4 offset-m2">
+  <div class="col m4">
     <a class="waves-effect waves-light btn modal-trigger" href="#modal2" id="new-rx">Add New Rx</a>
 
       <div id="modal2" class="modal">
@@ -26,7 +26,7 @@
 </div>
 
     <div class="row ehr">
-      <div class="col m4 offset-m1 s12">
+      <div class="col m4 offset-m2 s12">
         <h4 id="most-recent-dr-h4">Most Recent Dr Visit</h4>
         <% if current_user.visits.blank? %>
           <h4> You have not submitted any doctor visits yet </h4>
@@ -47,7 +47,7 @@
       </div>
 
 
-      <div class="col m4 offset-m2 s6">
+      <div class="col m4 s6">
         <h4 id="most-recent-rx-h4">Most Recent Rx</h4>
         <% if current_user.prescriptions.blank? %>
           <h4> You have submitted any prescriptions yet </h4>

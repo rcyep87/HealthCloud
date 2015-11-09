@@ -83,6 +83,10 @@ section.white {
   text-align: center;
 }
 
+.card {
+  border-radius: 15px;
+}
+
 .card .card-action a {
   color: #113321;
 }
@@ -124,4 +128,22 @@ nav ul a {
 
 .benefit-card {
   padding-top: 60px;
+}
+
+.new_user{
+  background-color: white;
+  color:#888888;
+  padding: 15px;
+  border-radius: 15px;
+  h3 {
+    color:green;
+  }
+  input[type=date]{
+    color:#D1D1D1
+  }
+}
+
+.benefit-summary-title {
+  border-bottom: 3px white dotted;
+  padding-bottom: 15px;
 }

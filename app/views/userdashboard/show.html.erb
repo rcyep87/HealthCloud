@@ -5,7 +5,7 @@
           <%= link_to image_tag("id_card.jpg"), new_med_coverage_path %>
           <p class="dash-captions">Submit Your Plan Information</p>
         <% else %>
-          <%= link_to image_tag("id_card.jpg"), med_coverage_path(current_user.med_coverage), class: "circle responsive-img" %>
+          <%= link_to image_tag("id_card.jpg"), med_coverage_path(current_user.med_coverage), class: "responsive-img" %>
           <p class="dash-captions">Benefit Information</p>
         <% end %>
       </p>

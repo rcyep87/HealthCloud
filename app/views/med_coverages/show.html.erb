@@ -1,10 +1,8 @@
-<p id="notice"><%= notice %></p>
-
 <div class="row benefit-card">
   <div class="col m6 offset-m3 s6">
     <div class="card blue lighten-2">
       <div class="card-content white-text">
-        <span class="card-title"><center>Benefit's Summary For <%= "#{@med_coverage.user.first_name} #{@med_coverage.user.last_name}" %></center></span><br />
+        <span class="card-title"><center class="benefit-summary-title">Benefit's Summary For <%= "#{@med_coverage.user.first_name} #{@med_coverage.user.last_name}" %></center></span><br />
         <p>
           <strong>Carrier Name: </strong>
           <%= @med_coverage.carrier %>
@@ -105,7 +103,7 @@
 
       </div>
       <div class="card-action">
-        <%= link_to 'Edit', edit_med_coverage_path(@med_coverage) %> |
+        <%= link_to 'Edit', edit_med_coverage_path(@med_coverage) %>
         <%= link_to 'Back', med_coverages_path %>
       </div>
     </div>

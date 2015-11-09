@@ -1,10 +1,10 @@
 <div class="row">
   <div class="col m4 offset-m4 s12 create-acct">
-    <center><h3>Create Account</h3></center>
-
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
-
+      <div>
+        <center><h3>Create Account</h3></center>
+      </div>
       <div class="field">
         <%= f.label :first_name %><br />
         <%= f.text_field :first_name, :placeholder => "first name" %>
@@ -17,7 +17,7 @@
 
       <div class="field">
         <%= f.label :date_of_birth %><br />
-        <%= f.date_field :dob, as: :datepicker, :placeholder => "date of birth" %>
+        <%= f.text_field :dob, class: "datepicker"%>
       </div>
 
       <div class="field">
