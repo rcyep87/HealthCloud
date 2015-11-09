@@ -19,6 +19,11 @@
         </p>
 
         <p>
+          <strong>Member ID: </strong>
+          <%= @med_coverage.memberid %>
+        </p>
+
+        <p>
           <strong>PCP Fee: </strong>
           <%= " $#{@med_coverage.pcp_fee}" %>
         </p>
@@ -105,6 +110,7 @@
       <div class="card-action">
         <%= link_to 'Edit', edit_med_coverage_path(@med_coverage) %>
         <%= link_to 'Back', med_coverages_path %>
+        <%= link_to "Add New Card", new_med_coverage_path %>
       </div>
     </div>
   </div>

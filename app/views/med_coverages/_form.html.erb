@@ -1,4 +1,5 @@
 <%= form_for(@med_coverage) do |f| %>
+  <h4><center>Submit Benefit Information</center></h4>
   <% if @med_coverage.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@med_coverage.errors.count, "error") %> prohibited this med_coverage from being saved:</h2>
@@ -73,13 +74,13 @@
   </div>
   <div class="field">
     <%= f.label :effective_date %><br>
-    <%= f.date_field :effective_date %>
+    <%= f.text_field :effective_date, class: "datepicker"%>
   </div>
   <div class="field">
     <%= f.label :renewal_date %><br>
-    <%= f.date_field :renewal_date %>
+    <%= f.text_field :renewal_date, class: "datepicker"%>
   </div>
   <div class="actions">
-    <%= f.submit "Submit" %>
+    <center><%= f.submit "Add New Benefit Info", class: "btn btn-default btn-primary" %></center>
   </div>
 <% end %>

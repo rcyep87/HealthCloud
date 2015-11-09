@@ -130,13 +130,26 @@ nav ul a {
   padding-top: 60px;
 }
 
+.new_med_coverage {
+  background-color: white;
+  color: #888888;
+  padding: 15px;
+  border-radius: 15px;
+  h4 {
+    color: #19A69A;
+  }
+  input[type=date]{
+    color: #D1D1D1
+  }
+}
+
 .new_user{
   background-color: white;
-  color:#888888;
+  color: #888888;
   padding: 15px;
   border-radius: 15px;
   h3 {
-    color:green;
+    color: #19A69A;
   }
   input[type=date]{
     color:#D1D1D1
