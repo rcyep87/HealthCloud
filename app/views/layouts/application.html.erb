@@ -44,12 +44,23 @@
       <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     </body>
   <% else %>
-    <body>
-
+    <body class="non-homepage">
       <nav>
         <div class="nav-wrapper blue">
           <a href="" class="brand-logo">MediWallet</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
+            <% if user_signed_in? %>
+              <li><%= link_to 'Home', root_path %></li>
+              <li><%= link_to 'Dashboard', dashboard_path %></li>
+              <li><%= link_to('Logout', destroy_user_session_path, method: :DELETE) %></li>
+            <% else %>
+              <li><%= link_to 'Home', root_path %></li>
+              <li><%= link_to 'Create Account', new_user_registration_path %></li>
+              <li><%= link_to 'Login', new_user_session_path %></li>
+            <% end %>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
             <% if user_signed_in? %>
               <li><%= link_to 'Home', root_path %></li>
               <li><%= link_to 'Dashboard', dashboard_path %></li>
@@ -62,7 +73,6 @@
           </ul>
         </div>
       </nav>
-
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
 
