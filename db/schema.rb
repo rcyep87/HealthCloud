@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151105221159) do
+ActiveRecord::Schema.define(version: 20151109212119) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 20151105221159) do
   add_index "rx_alerts", ["user_id"], name: "index_rx_alerts_on_user_id", using: :btree
 
   create_table "sleeps", force: :cascade do |t|
-    t.integer  "minutes",       null: false
+    t.integer  "hours",         null: false
     t.integer  "user_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
