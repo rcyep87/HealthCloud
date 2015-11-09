@@ -36,6 +36,6 @@
   <div class="col m6">
     <h4><center>Hours Slept Today</center></h4>
     <p><center><%= render "todayslepthours" %></center></p>
-      <%= column_chart current_user.sleeps.group_by_day(:date_of_sleep).sum(:minutes) %>
+      <%= column_chart current_user.sleeps.group_by_day(:date_of_sleep).sum(:hours) %>
   </div>
 </div>
