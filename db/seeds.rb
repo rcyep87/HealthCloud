@@ -32,7 +32,7 @@
 
     5.times do
     Prescription.create({
-          name:                %w(Tylenol Allegra Cipro Avapro Lipitor Zyrtec Flomax).sample,
+          name:                %w(Tylenol Allegra Cipro Avapro Lipitor Zyrtec Flomax).shuffle.sample,
           dosage:              100,
           frequency:           "1x day",
           brand:               true,
@@ -47,7 +47,7 @@
           physician_first:      "Bradley",
           physician_last:       "Rodgers",
           reason_for_visit:     %w(stomach sleep stress ankle).sample,
-          diagnosis:            %w(angry hungry stress sleep).sample,
+          diagnosis:            ["sleep", "change diet", "on feet too much", "take vacation"].shuffle.sample,
           user_id:              user.id })
     end
 
