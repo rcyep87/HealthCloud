@@ -1,11 +1,11 @@
 5.times do |n|
   user = User.new({
-        first_name:    "John#{n + 1}",
+        first_name:    %w(Tom James Jeff Justin Travis).shuffle.sample,
         middle_name:   "D.",
         last_name:     "Smith",
         dob:           "1982-07-1#{n + 1}",
         ssn:           "###-##-####",
-        email:         "John#{n + 1}@example.com",
+        email:         "test#{n + 1}@example.com",
         mobile_phone:  "+18324884746" })
 
     user.password = "password"
