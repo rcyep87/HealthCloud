@@ -10,7 +10,9 @@
 }
 
 .non-homepage {
-  background: url("crossword.jpg");
+  // background-image: url(../images/crossword.jpg);
+  background-repeat: repeat;
+  background: image-url('crossword.png');
 }
 
 #homepage-h1 {
@@ -23,6 +25,7 @@
 
  .dashboard {
    padding-top: 180px;
+   background: image-url("crossword.jpg");
  }
 
 img {
@@ -174,4 +177,8 @@ nav ul a {
   position: fixed;
   width: 100%;
   bottom: 0;
+}
+
+p.dash-captions {
+  padding-left: 8px;
 }
