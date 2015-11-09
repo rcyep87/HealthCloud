@@ -3,7 +3,8 @@
  @import 'materialize';
 
 .homepage {
- 	background-image: image-url("london-life.jpg");
+  &.london { background-image: image-url("london-life.jpg"); }
+
  	background-size: cover;
   color: white;
 }
@@ -159,4 +160,14 @@ nav ul a {
 .benefit-summary-title {
   border-bottom: 3px white dotted;
   padding-bottom: 15px;
+}
+
+
+.page-footer.fixed {
+  opacity: 0.4;
+  transition: 0.5s all;
+  &:hover { opacity: 1; transition: 0.5s all; }
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }

@@ -16,15 +16,15 @@
 //= require materialize-sprockets
 //= require_tree .
 
+var openAgreementModal = function () {
+  $('#modal3').openModal();
+};
+
 $(document).ready(function(){
   $('.modal-trigger').leanModal();
-});
-
-$('.datepicker').pickadate({
-    selectMonths: true, // Creates a dropdown to control month
-    selectYears: 100 // Creates a dropdown of 100 years to control year
-});
-
-$(document).ready(function(){
+  $('.datepicker').pickadate({
+      selectMonths: true, // Creates a dropdown to control month
+      selectYears: 100 // Creates a dropdown of 100 years to control year
+  });
   $(".button-collapse").sideNav();
 });

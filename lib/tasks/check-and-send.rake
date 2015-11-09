@@ -27,21 +27,27 @@ task :send_reminder => :environment do
 
   @users.each do |user|
     user.rx_alerts.where(today => true).each do |alert|
+      next if alert.prescription.nil? || alert.time_to_take.nil?
       puts "DEBUG: [ALERT][ID:#{alert.id} #{alert.prescription.name} #{alert.time_to_take}] - [USER][ID:#{user.id} #{user.first_name}]"
       rx_name         = alert.prescription.name
       time            = alert.time_to_take
       mobile          = user.mobile_phone
       user_first_name = user.first_name
+
+      five_min_before = (Time.now - 300)
+      five_min_after  = (Time.now + 300)
+      event_range = five_min_before..five_min_after
+
+      if time.nil?
+        adjusted_time = DateTime.now.change({ hour: 00, min: 00 })
+      else
+        adjusted_time = DateTime.now.change({ hour: time.hour, min: time.min })
+      end
+
+      if event_range.cover?(adjusted_time)
+        puts "DEBUG: SENDING MESSAGE"
+        send_txt(mobile, user_first_name, rx_name)
+      end
     end
-  end
-
-  five_min_before = (Time.now - 300)
-  five_min_after  = (Time.now + 300)
-  event_range = five_min_before..five_min_after
-  adjusted_time = DateTime.now.change({ hour: time.hour, min: time.min })
-
-  if event_range.cover?(adjusted_time)
-    puts "DEBUG: SENDING MESSAGE"
-    send_txt(mobile, user_first_name, rx_name)
   end
 end

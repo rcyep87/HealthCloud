@@ -7,8 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 
-  <% if controller_name == "home" || "devise" %>
-    <body class="homepage">
+  <% if controller_name == "home" || devise_controller? %>
+    <body class="homepage <%= ['london'].sample %>">
       <nav>
         <div class="nav-wrapper blue">
           <a href="" class="brand-logo">MediWallet</a>
@@ -71,12 +71,12 @@
     </body>
   <% end %>
 
-  <footer class="page-footer">
-    <div class="container">
+  <footer class="page-footer fixed">
+    <!-- <div class="container">
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">MediWallet</h5>
-          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+          <p class="grey-text text-lighten-4"></p>
         </div>
         <div class="col l4 offset-l2 s12">
           <h5 class="white-text">Links</h5>
@@ -88,7 +88,7 @@
           </ul>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="footer-copyright">
       <div class="container">
       © 2015 Copyright Ryan Yep
