@@ -44,3 +44,14 @@
       </div>
     </div>
   </div>
+
+<% if current_user.sign_in_count < 1 %>
+  <% if cookies[:accepted] == false %>
+  <script>
+  $(document).ready(function() {
+    $('#modal3').openModal();
+    document.cookie = document.cookie + " accepted=true"
+  });
+  </script>
+  <% end %>
+<% end %>
