@@ -12,16 +12,16 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :Date_of_service %><br>
+    <%= f.text_field :dos, class: "datepicker"%>
+  </div>
+  <div class="field">
     <%= f.label :physician_first %><br>
     <%= f.text_field :physician_first %>
   </div>
   <div class="field">
     <%= f.label :physician_last %><br>
     <%= f.text_field :physician_last %>
-  </div>
-  <div class="field">
-    <%= f.label :Date_of_service %><br>
-    <%= f.text_field :dos, class: "datepicker"%>
   </div>
   <div class="field">
     <%= f.label :reason_for_visit %><br>
