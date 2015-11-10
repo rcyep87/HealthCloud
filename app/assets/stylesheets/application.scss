@@ -169,11 +169,8 @@ nav ul a {
 }
 
 
-.page-footer.fixed {
-  opacity: 0.4;
-  transition: 0.5s all;
-  &:hover { opacity: 1; transition: 0.5s all; }
-  position: fixed;
+.page-footer {
+  position: static;
   width: 100%;
   bottom: 0;
 }
