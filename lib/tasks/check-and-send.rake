@@ -38,10 +38,11 @@ task :send_reminder => :environment do
       five_min_after  = (Time.zone.now + 5.minutes)
       event_range = five_min_before..five_min_after
 
-      puts "DEBUG: #{event_range.inspect} #{time} #{mobile}"
+
       if time.nil?
         puts "DEBUG:  #{time.inspect}"
         adjusted_time = Time.zone.now.change({ hour: 00, min: 00 })
+        puts "DEBUG: #{event_range.inspect} #{time} #{mobile}"
         if event_range.cover?(adjusted_time)
           puts "DEBUG: SENDING MESSAGE"
           send_txt(mobile, user_first_name, rx_name)
@@ -51,6 +52,7 @@ task :send_reminder => :environment do
       else
         puts "DEBUG:  #{time.inspect}"
         adjusted_time = Time.zone.now.change({ hour: time.hour, min: time.min })
+        puts "DEBUG: #{event_range.inspect} #{time} #{mobile}"
         if event_range.cover?(adjusted_time)
           puts "DEBUG: SENDING MESSAGE"
           send_txt(mobile, user_first_name, rx_name)
