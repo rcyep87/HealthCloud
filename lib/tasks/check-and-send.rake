@@ -34,8 +34,8 @@ task :send_reminder => :environment do
       mobile          = user.mobile_phone
       user_first_name = user.first_name
 
-      five_min_before = (Time.zone.now - 300)
-      five_min_after  = (Time.zone.now + 300)
+      five_min_before = (Time.zone.now - 5.minutes)
+      five_min_after  = (Time.zone.now + 5.minutes)
       event_range = five_min_before..five_min_after
 
       if time.nil?
