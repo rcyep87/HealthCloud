@@ -30,7 +30,7 @@ task :send_reminder => :environment do
       next if alert.prescription.nil? || alert.time_to_take.nil?
       puts "DEBUG: [ALERT][ID:#{alert.id} #{alert.prescription.name} #{alert.time_to_take}] - [USER][ID:#{user.id} #{user.first_name}]"
       rx_name         = alert.prescription.name
-      time            = alert.time_to_take
+      time            = alert.time_to_take.in_time_zone(Time.zone)
       mobile          = user.mobile_phone
       user_first_name = user.first_name
 
