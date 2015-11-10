@@ -40,9 +40,9 @@ task :send_reminder => :environment do
 
 
       if time.nil?
-        puts "DEBUG:  #{time.inspect}"
+        puts "DEBUG:  ORIGINAL TIME: #{time.inspect}"
         adjusted_time = Time.zone.now.change({ hour: 00, min: 00 })
-        puts "DEBUG: #{event_range.inspect} #{time} #{mobile}"
+        puts "DEBUG: #{event_range.inspect} \n ADJUSTED TIME: #{adjusted_time.inspect} #{mobile}"
         if event_range.cover?(adjusted_time)
           puts "DEBUG: SENDING MESSAGE"
           send_txt(mobile, user_first_name, rx_name)
@@ -50,9 +50,9 @@ task :send_reminder => :environment do
           puts "Time zone didn't cover"
         end
       else
-        puts "DEBUG:  #{time.inspect}"
+        puts "DEBUG:  ORIGINAL TIME: #{time.inspect}"
         adjusted_time = Time.zone.now.change({ hour: time.hour, min: time.min })
-        puts "DEBUG: #{event_range.inspect} #{time} #{mobile}"
+        puts "DEBUG: #{event_range.inspect} \n ADJUSTED TIME: #{adjusted_time.inspect} #{mobile}"
         if event_range.cover?(adjusted_time)
           puts "DEBUG: SENDING MESSAGE"
           send_txt(mobile, user_first_name, rx_name)
