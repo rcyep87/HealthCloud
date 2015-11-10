@@ -18,7 +18,7 @@ task :send_reminder => :environment do
 
   @users = User.all
 
-  today = [:Su, :M, :T, :W, :Th, :F, :S][Time.now.wday]
+  today = [:Su, :M, :T, :W, :Th, :F, :S][Time.zone.now.wday]
 
   rx_name         = nil
   time            = nil
@@ -34,24 +34,24 @@ task :send_reminder => :environment do
       mobile          = user.mobile_phone
       user_first_name = user.first_name
 
-      five_min_before = (Time.now - 300)
-      five_min_after  = (Time.now + 300)
+      five_min_before = (Time.zone.now - 300)
+      five_min_after  = (Time.zone.now + 300)
       event_range = five_min_before..five_min_after
 
       if time.nil?
-        adjusted_time = DateTime.now.change({ hour: 00, min: 00 })
+        adjusted_time = Time.zone.now.change({ hour: 00, min: 00 })
         if event_range.cover?(adjusted_time)
           puts "DEBUG: SENDING MESSAGE"
           send_txt(mobile, user_first_name, rx_name)
         end
       else
-        adjusted_time = DateTime.now.change({ hour: time.hour, min: time.min })
+        adjusted_time = Time.zone.now.change({ hour: time.hour, min: time.min })
         if event_range.cover?(adjusted_time)
           puts "DEBUG: SENDING MESSAGE"
           send_txt(mobile, user_first_name, rx_name)
         end
       end
-      
+
     end
   end
 end
