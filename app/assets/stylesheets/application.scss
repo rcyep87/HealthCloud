@@ -10,7 +10,6 @@
 }
 
 .non-homepage {
-  // background-image: url(../images/crossword.jpg);
   background-repeat: repeat;
   background: image-url('crossword.png');
 }
@@ -25,7 +24,7 @@
 
  .dashboard {
    padding-top: 180px;
-   background: image-url("crossword.jpg");
+   background: image-url("crossword.png");
  }
 
 img {
@@ -152,7 +151,7 @@ nav ul a {
 }
 
 .new_user{
-  background-color: white;
+  background: rgba(255, 255, 255, 0.9);
   color: #888888;
   padding: 15px;
   border-radius: 15px;
