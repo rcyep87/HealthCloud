@@ -2,38 +2,62 @@
 
 <h1><center>Health Tracking</center></h1>
 
-<div class="row">
-  <div class="col m4 offset-m3 health-data-modal">
+<div class="row hide-on-med-and-up">
+  <div class="col m4 offset-m3 s12 health-data-modal center">
   <a class="waves-effect waves-light btn modal-trigger" href="#modal4" id="today-steps">Record Today's Steps</a>
 
     <div id="modal4" class="modal">
       <div class="modal-content">
         <h4><center>Record Today's Steps</center></h4>
-        <p><%= render "steps/form" %></p>
+        <p><%= render "steps/form", steps: 4 %></p>
       </div>
     </div>
   </div>
 
-  <div class="col m4">
+  <div class="col m4 s12 center">
   <a class="waves-effect waves-light btn modal-trigger" href="#modal5" id="today-sleeps">Record Today's Sleep</a>
 
     <div id="modal5" class="modal">
       <div class="modal-content">
         <h4><center>Record Today's Sleep Hours</center></h4>
-        <p><%= render "sleeps/form" %></p>
+        <p><%= render "sleeps/form", sleeps: 5 %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row hide-on-small-only">
+  <div class="col m4 offset-m3 s6 health-data-modal">
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal14" id="today-steps">Record Today's Steps</a>
+
+    <div id="modal14" class="modal">
+      <div class="modal-content">
+        <h4><center>Record Today's Steps</center></h4>
+        <p><%= render "steps/form", steps: 14 %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col m4 s6">
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal15" id="today-sleeps">Record Today's Sleep</a>
+
+    <div id="modal15" class="modal">
+      <div class="modal-content">
+        <h4><center>Record Today's Sleep Hours</center></h4>
+        <p><%= render "sleeps/form", steps: 15 %></p>
       </div>
     </div>
   </div>
 </div>
 
   <div class="row healthdash">
-    <div class="col m6">
+    <div class="col m6 s12">
       <h4><center>Today's Activity</center></h4>
       <p><center><%= render "todaysteps" %></center></p>
         <%= line_chart current_user.steps.group_by_day(:date_of_steps).sum(:steps_today) %>
     </div>
 
-  <div class="col m6">
+  <div class="col m6 s12">
     <h4><center>Hours Slept Today</center></h4>
     <p><center><%= render "todayslepthours" %></center></p>
       <%= column_chart current_user.sleeps.group_by_day(:date_of_sleep).sum(:hours) %>

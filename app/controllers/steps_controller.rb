@@ -29,7 +29,7 @@ class StepsController < ApplicationController
 
     respond_to do |format|
       if @step.save
-        format.html { redirect_to @step, notice: 'Step was successfully created.' }
+        format.html { redirect_to health_path, notice: 'Step was successfully created.' }
         format.json { render :show, status: :created, location: @step }
       else
         format.html { render :new }

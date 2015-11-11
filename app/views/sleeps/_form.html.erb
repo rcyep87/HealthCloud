@@ -1,4 +1,4 @@
-<%= form_for(@sleep) do |f| %>
+<%= form_for(@sleep, namespace: local_assigns[:sleeps]) do |f| %>
   <% if @sleep.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@sleep.errors.count, "error") %> prohibited this sleep from being saved:</h2>
@@ -20,6 +20,6 @@
     <%= f.text_field :date_of_sleep, class: "datepicker"%>
   </div>
   <div class="actions">
-    <%= f.submit "Record Today's Sleep", class: "btn btn-default btn-primary" %>
+    <center><%= f.submit "Record Today's Sleep", class: "btn btn-default btn-primary" %></center>
   </div>
 <% end %>

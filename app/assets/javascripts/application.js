@@ -16,9 +16,9 @@
 //= require materialize-sprockets
 //= require_tree .
 
-var openAgreementModal = function () {
-  $('#modal3').openModal();
-};
+// var openAgreementModal = function () {
+//   $('#modal3').openModal();
+// };
 
 $(document).ready(function(){
   $('.modal-trigger').leanModal();

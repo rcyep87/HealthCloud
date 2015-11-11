@@ -29,7 +29,7 @@ class SleepsController < ApplicationController
 
     respond_to do |format|
       if @sleep.save
-        format.html { redirect_to @sleep, notice: 'Sleep was successfully created.' }
+        format.html { redirect_to health_path, notice: 'Sleep was successfully created.' }
         format.json { render :show, status: :created, location: @sleep }
       else
         format.html { render :new }

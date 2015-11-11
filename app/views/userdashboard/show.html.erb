@@ -1,31 +1,29 @@
   <div class="row dashboard centered">
-    <div class="col m3 offset-m2 s3 dashcol">
-      <p>
+    <div class='top-pad hide-on-small-only'></div>
+    <div class="col m4 s12 dashcol">
         <% if current_user.med_coverage.blank? %>
-          <%= link_to image_tag("benefit-card.png"), new_med_coverage_path %>
-          <p class="dash-captions">Submit Your Plan Information</p>
+          <%= link_to new_med_coverage_path do %>
+            <%= image_tag("benefit-card.png") %>
+            <p class="dash-captions">Benefit Information</p>
+          <% end %>
         <% else %>
-          <%= link_to image_tag("benefit-card.png"), med_coverage_path(current_user.med_coverage) %>
-          <p class="dash-captions">Benefit Information</p>
+          <%= link_to med_coverage_path(current_user.med_coverage) do %>
+            <%= image_tag("benefit-card.png") %>
+            <p class="dash-captions">Benefit Information</p>
+          <% end %>
         <% end %>
-      </p>
     </div>
-    <div class="col m3 s3 dashcol" >
-      <p>
-        <% if current_user.visits.blank? || current_user.prescriptions.blank? %>
-          <%= link_to image_tag("clipboard.png", :id => "ehr-img"), ehr_path %>
-          <p class="dash-captions">Electronic Health Record</p>
-        <% else %>
-          <%= link_to image_tag("clipboard.png", :id => "ehr-img"), ehr_path %>
+    <div class="col m4 s12 dashcol">
+        <%= link_to ehr_path do %>
+          <%= image_tag("clipboard.png", :id => "ehr-img") %>
           <p class="dash-captions">Electronic Health Record</p>
         <% end %>
-      </p>
     </div>
-    <div class="col m3 s3 dashcol">
-      <p>
-        <%= link_to image_tag("graph.png"), health_path %>
+    <div class="col m4 s12 dashcol">
+      <%= link_to health_path do %>
+        <%= image_tag("graph.png") %>
         <p class="dash-captions health-data-heading">Health Data</p>
-      </p>
+      <% end %>
     </div>
   </div>
 
