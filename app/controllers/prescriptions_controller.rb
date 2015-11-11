@@ -1,5 +1,6 @@
 class PrescriptionsController < ApplicationController
   before_action :set_prescription, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, except: [:new, :create]
 
   # GET /prescriptions
   # GET /prescriptions.json

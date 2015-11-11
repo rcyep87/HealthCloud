@@ -1,5 +1,6 @@
 class StepsController < ApplicationController
   before_action :set_step, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, except: [:new, :create]
 
   # GET /steps
   # GET /steps.json

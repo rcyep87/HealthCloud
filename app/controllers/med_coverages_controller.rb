@@ -1,5 +1,6 @@
 class MedCoveragesController < ApplicationController
   before_action :set_med_coverage, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, except: [:new, :create]
 
   # GET /med_coverages
   # GET /med_coverages.json

@@ -1,5 +1,6 @@
 class SleepsController < ApplicationController
   before_action :set_sleep, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, except: [:new, :create]
 
   # GET /sleeps
   # GET /sleeps.json

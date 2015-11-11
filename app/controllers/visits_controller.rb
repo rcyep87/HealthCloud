@@ -1,5 +1,6 @@
 class VisitsController < ApplicationController
   before_action :set_visit, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, except: [:new, :create]
 
   # GET /visits
   # GET /visits.json

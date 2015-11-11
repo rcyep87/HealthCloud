@@ -1,4 +1,6 @@
 class RxAlertsController < ApplicationController
+  before_action :set_prescription, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, except: [:new, :create]
 
   def new
     @rx_alert = RxAlert.new
@@ -10,7 +12,7 @@ class RxAlertsController < ApplicationController
 
     respond_to do |format|
       if @rx_alert.save
-        format.html { redirect_to ehr_path, notice: 'You have succssfully scheduled a reminder.' }
+        format.html { redirect_to ehr_path, notice: 'You have successfully scheduled a reminder.' }
       else
         format.html { render :new }
       end
