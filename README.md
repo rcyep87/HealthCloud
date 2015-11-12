@@ -2,8 +2,6 @@
 
 Here's a [link](www.mediwallet.io) to the live site. Got a question? [Email](mailto:ryan.yep@gmail.com) me.
 
-* [Introduction](#installation)
-
 ## Introduction
 
 MediWallet is an application which allows a user to store their important healthcare information online.
@@ -42,3 +40,6 @@ MediWallet is on Ruby on Rails with a Postgresql database and hosted on Heroku.
 * [User Dashboard](https://dl.dropboxusercontent.com/u/17178250/HealthDocs/HealthDocs%20-%20User%20Dashboard.png)
 * [Electronic Health Record Page](https://dl.dropboxusercontent.com/u/17178250/HealthDocs/HealthDocs%20-%20EHR%20Page.png)
 * [Health Data Page](https://dl.dropboxusercontent.com/u/17178250/HealthDocs/HealthDocs%20-%20Health%20Data%20Page.png)
+
+## Trello Board
+[Link](https://trello.com/b/vUhu2fYu/mediwallet)
