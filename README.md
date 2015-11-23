@@ -1,6 +1,6 @@
 # MediWallet
 
-Here's a [link](www.mediwallet.io) to the live site. Got a question? [Email](mailto:ryan.yep@gmail.com) me.
+Here's a [link](https://healthcloud.herokuapp.com/) to the live site. Got a question? [Email](mailto:ryan.yep@gmail.com) me.
 
 ## Introduction
 
