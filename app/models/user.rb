@@ -38,4 +38,17 @@ class User < ActiveRecord::Base
     sleeps.order(date_of_sleep: :desc).limit(1)
   end
 
+  def user_rx_alerts
+    prescriptions.map do |rx|
+      rx.rx_alerts.map do |rx|
+        id = rx.prescription_id
+        rx_name = Prescriptions.find(id).name
+        unless rx_name.nil? || rx_name.empty?
+          rx_name
+        end
+      end
+    end
+  end
+
+
 end
