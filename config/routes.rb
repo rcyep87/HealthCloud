@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :prescriptions
   resources :visits
   resources :rx_alerts
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   get  "/dashboard" => "userdashboard#show"
   get  "/ehr" => "ehr#show"

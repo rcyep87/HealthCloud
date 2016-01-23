@@ -23,6 +23,7 @@
               <li><%= link_to 'Home', root_path %></li>
               <li><%= link_to 'Create Account', new_user_registration_path %></li>
               <li><%= link_to 'Login', new_user_session_path %></li>
+              <li><%= link_to 'Sign in with Fitbit', user_omniauth_authorize_path(:fitbit) %></li>
             <% end %>
           </ul>
           <ul class="side-nav" id="mobile-demo">
