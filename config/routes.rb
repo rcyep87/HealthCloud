@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get "/health" => "health_data#show"
   get '/txt', to: 'twilio#send_txt', as: 'txt'
 
+  match "auth/:provider/callback" => "sessions#create", via: [:get]
+
   root to: "home#index"
 
 end
