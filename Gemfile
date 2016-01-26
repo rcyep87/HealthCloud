@@ -63,3 +63,4 @@ group :production do
 end
 
 gem 'materialize-sass'
+gem 'omniauth'
