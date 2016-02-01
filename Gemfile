@@ -64,4 +64,4 @@ end
 
 gem 'materialize-sass'
 gem 'omniauth'
-gem 'omniauth-fitbit'
+gem 'omniauth-fitbit-oauth2'
