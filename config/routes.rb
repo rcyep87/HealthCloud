@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'auth0/callback'
+
+  get 'auth0/failure'
+
   resources :exercises
   resources :sleeps
   resources :steps
