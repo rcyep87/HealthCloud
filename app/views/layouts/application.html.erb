@@ -23,7 +23,7 @@
               <li><%= link_to 'Home', root_path %></li>
               <li><%= link_to 'Create Account', new_user_registration_path %></li>
               <li><%= link_to 'Login', new_user_session_path %></li>
-              <li><%= link_to 'Login with Fitbit', "https://tyc0.auth0.com/authorize?&client_id=ZXF2Mn7QHOBjXs3WNmzqmSlDoIECcQ49&connection=fitbit"%></li>
+              <li><%= link_to 'Login with Fitbit', "https://tyc0.auth0.com/authorize?&client_id=ZXF2Mn7QHOBjXs3WNmzqmSlDoIECcQ49&connection=fitbit&response_type=token&redirect_uri=https%3A%2F%2Fmediwallet.herokuapp.com%2Fauth%2Fauth0%2Fcallback"%></li>
             <% end %>
           </ul>
           <ul class="side-nav" id="mobile-demo">
