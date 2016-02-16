@@ -58,4 +58,6 @@
     </div>
     </div>
     <% end %>
+    <%= link_to("< Prev Page", prescriptions_path(page: @page - 1, limit: @limit)) %>
+    <%= link_to("More Page >", prescriptions_path(page: @page + 1, limit: @limit)) %>
 </div>

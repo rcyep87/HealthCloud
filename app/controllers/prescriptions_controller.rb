@@ -5,7 +5,9 @@ class PrescriptionsController < ApplicationController
   # GET /prescriptions
   # GET /prescriptions.json
   def index
-    @user_prescriptions = current_user.prescriptions
+    @page = (params[:page] || 0).to_i
+    @limit = (params[:limit] || 10).to_i
+    @user_prescriptions = current_user.prescriptions.limit(@limit).offset(@page * @limit)
     @rx_alert = RxAlert.new
     @rx_alert.user = current_user
   end
